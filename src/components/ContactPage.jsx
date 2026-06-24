@@ -201,21 +201,23 @@ export default function ContactPage({ onNavigate }) {
             <div style={cardStyle} className="contact-info-card">
               <div style={iconContainerStyle}>📍</div>
               <h3 style={cardHeadingStyle}>Office Addresses</h3>
-              <div style={{ marginBottom: '20px', width: '100%' }}>
-                <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Chennai (Regd. Office)</h4>
-                <p style={cardBodyStyle}>
-                  4/608, G1, V.O.C Street,<br/>
-                  Perungudi, Palavakkam,<br/>
-                  Chennai, Tamil Nadu - 600041
-                </p>
-              </div>
-              <div style={{ width: '100%' }}>
-                <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Madurai Office</h4>
-                <p style={cardBodyStyle}>
-                  P 316, Karpaga Nagar, 11th Street,<br/>
-                  K Pudur, Madurai,<br/>
-                  Tamil Nadu - 625007
-                </p>
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px', width: '100%' }}>
+                <div style={{ width: '100%' }}>
+                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Chennai (Regd. Office)</h4>
+                  <p style={cardBodyStyle}>
+                    4/608, G1, V.O.C Street,<br/>
+                    Perungudi, Palavakkam,<br/>
+                    Chennai, Tamil Nadu - 600041
+                  </p>
+                </div>
+                <div style={{ width: '100%' }}>
+                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Madurai Office</h4>
+                  <p style={cardBodyStyle}>
+                    P 316, Karpaga Nagar, 11th Street,<br/>
+                    K Pudur, Madurai,<br/>
+                    Tamil Nadu - 625007
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -223,18 +225,28 @@ export default function ContactPage({ onNavigate }) {
             <div style={cardStyle} className="contact-info-card">
               <div style={iconContainerStyle}>📞</div>
               <h3 style={cardHeadingStyle}>Phone Number</h3>
-              <p style={cardBodyStyle}>
-                <strong>Sales & Planning:</strong> +91 87787 40104
-              </p>
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
+                <div style={{ width: '100%' }}>
+                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Sales & Planning</h4>
+                  <p style={cardBodyStyle}>
+                    +91 87787 40104
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Card 03 — Email */}
             <div style={cardStyle} className="contact-info-card">
               <div style={iconContainerStyle}>✉️</div>
               <h3 style={cardHeadingStyle}>Email Address</h3>
-              <p style={cardBodyStyle}>
-                <strong>General Enquiries:</strong> magirenewables@gmail.com
-              </p>
+              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
+                <div style={{ width: '100%' }}>
+                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>General Enquiries</h4>
+                  <p style={cardBodyStyle}>
+                    magirenewables@gmail.com
+                  </p>
+                </div>
+              </div>
             </div>
 
 
@@ -746,7 +758,9 @@ const cardStyle = {
   flexDirection: 'column',
   alignItems: 'flex-start',
   transition: 'all 0.3s ease',
-  cursor: 'pointer'
+  cursor: 'pointer',
+  height: '100%',
+  boxSizing: 'border-box'
 };
 
 const iconContainerStyle = {
