@@ -1494,7 +1494,7 @@ export default function App() {
           
           <div style={{
             display: 'grid',
-            gridTemplateColumns: '1.5fr 1fr 1fr 1.5fr',
+            gridTemplateColumns: '1.5fr 1fr 1fr',
             gap: '64px',
             marginBottom: '64px'
           }}>
@@ -1531,39 +1531,10 @@ export default function App() {
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px' }}>
                 <li><a href="#about" onClick={(e) => { e.preventDefault(); handleNavigate('about'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>About Us</a></li>
                 <li><a href="#blog" onClick={(e) => { e.preventDefault(); handleNavigate('blog'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Blog & Insights</a></li>
-                <li><a href="#industries" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'industries'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Industries Served</a></li>
+                <li><a href="#industries" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'industries'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Campuses Served</a></li>
                 <li><a href="#process" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'timeline'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Process Timeline</a></li>
                 <li><a href="#faq" onClick={(e) => { e.preventDefault(); handleNavigate('faq'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Support FAQs</a></li>
               </ul>
-            </div>
-
-            {/* Col 4 */}
-            <div id="newsletter">
-              <h4 style={{ color: '#FFFFFF', fontSize: '16px', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '1px' }}>
-                Newsletter
-              </h4>
-              <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', marginBottom: '16px' }}>
-                Subscribe to our engineering papers & sustainability briefs.
-              </p>
-              <form onSubmit={(e) => { e.preventDefault(); alert('Subscribed!'); }} style={{ display: 'flex', gap: '8px' }}>
-                <input 
-                  type="email" 
-                  placeholder="name@organization.com"
-                  required
-                  style={{
-                    padding: '12px',
-                    borderRadius: '8px',
-                    border: '1px solid rgba(255,255,255,0.2)',
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                    color: '#FFFFFF',
-                    flexGrow: 1,
-                    outline: 'none'
-                  }}
-                />
-                <button type="submit" className="btn btn-accent" style={{ padding: '12px 18px', borderRadius: '8px' }}>
-                  Join
-                </button>
-              </form>
             </div>
 
           </div>

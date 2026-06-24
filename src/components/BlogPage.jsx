@@ -200,13 +200,18 @@ export default function BlogPage({ onNavigate }) {
               <a href="#featured" className="btn btn-primary">
                 Explore Articles
               </a>
-              <a href="#newsletter" className="btn btn-secondary" style={{
-                border: '1px solid rgba(255, 255, 255, 0.3)',
-                backgroundColor: 'transparent',
-                color: '#FFFFFF'
-              }}>
-                Subscribe Newsletter
-              </a>
+              <button 
+                onClick={() => onNavigate('contact')}
+                className="btn btn-secondary" 
+                style={{
+                  border: '1px solid rgba(255, 255, 255, 0.3)',
+                  backgroundColor: 'transparent',
+                  color: '#FFFFFF',
+                  cursor: 'pointer'
+                }}
+              >
+                Contact Us
+              </button>
             </div>
           </div>
         </div>
