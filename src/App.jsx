@@ -348,12 +348,11 @@ export default function App() {
   ];
 
   const logoPartners = [
-    "Schneider Electric",
-    "Siemens",
-    "ABB Group",
-    "GE Vernova",
-    "Tesla Energy",
-    "Hitachi Energy"
+    { name: "Justice Basheer Ahmed Sayed College for Women", img: "/images/logos/jbas_logo.png" },
+    { name: "GRT Institute of Engineering & Technology", img: "/images/logos/grt_logo.png" },
+    { name: "Rajalakshmi Engineering College", img: "/images/logos/rec_logo.png" },
+    { name: "Ethiraj College for Women", img: "/images/logos/ethiraj_logo.png" },
+    { name: "Subbulakshmi Lakshmipathy College of Science", img: "/images/logos/slcs_logo.png" }
   ];
 
   return (
@@ -764,19 +763,29 @@ export default function App() {
                 <div 
                   key={idx} 
                   style={{
-                    fontSize: '22px',
-                    fontWeight: '800',
-                    color: '#9CA3AF',
-                    fontFamily: 'var(--font-heading)',
-                    letterSpacing: '-0.5px',
-                    transition: 'var(--transition-fast)',
-                    cursor: 'pointer',
                     display: 'inline-flex',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    height: '80px',
+                    transition: 'var(--transition-fast)',
+                    cursor: 'pointer'
                   }}
                   className="grayscale-logo-item"
                 >
-                  {logo}
+                  <img 
+                    src={logo.img} 
+                    alt={logo.name} 
+                    style={{ 
+                      maxHeight: '100%', 
+                      maxWidth: '220px', 
+                      objectFit: 'contain',
+                      opacity: 0.75,
+                      filter: 'grayscale(100%)',
+                      transition: 'all 0.3s ease'
+                    }}
+                    onMouseEnter={(e) => { e.target.style.opacity = '1'; e.target.style.filter = 'none'; }}
+                    onMouseLeave={(e) => { e.target.style.opacity = '0.75'; e.target.style.filter = 'grayscale(100%)'; }}
+                  />
                 </div>
               ))}
             </div>
