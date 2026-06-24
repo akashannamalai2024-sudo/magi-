@@ -1539,11 +1539,11 @@ export default function App() {
                 Quick Links
               </h4>
               <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '15px' }}>
+                <li><a href="#home" onClick={(e) => { e.preventDefault(); handleNavigate('home'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Home</a></li>
                 <li><a href="#about" onClick={(e) => { e.preventDefault(); handleNavigate('about'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>About Us</a></li>
-                <li><a href="#blog" onClick={(e) => { e.preventDefault(); handleNavigate('blog'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Blog & Insights</a></li>
-                <li><a href="#industries" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'industries'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Campuses Served</a></li>
-                <li><a href="#process" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'timeline'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Process Timeline</a></li>
-                <li><a href="#faq" onClick={(e) => { e.preventDefault(); handleNavigate('faq'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Support FAQs</a></li>
+                <li><a href="#blog" onClick={(e) => { e.preventDefault(); handleNavigate('blog'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Blog</a></li>
+                <li><a href="#faq" onClick={(e) => { e.preventDefault(); handleNavigate('faq'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>FAQs</a></li>
+                <li><a href="#contact" onClick={(e) => { e.preventDefault(); handleNavigate('contact'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Contact Us</a></li>
               </ul>
             </div>
 
