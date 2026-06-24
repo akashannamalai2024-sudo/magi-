@@ -126,7 +126,7 @@ export default function ContactPage({ onNavigate }) {
                 <a href="#form-section" className="btn btn-primary">
                   Schedule Consultation
                 </a>
-                <a href="tel:+91441234567" className="btn btn-secondary" style={{
+                <a href="tel:+918778740104" className="btn btn-secondary" style={{
                   border: '1px solid rgba(255, 255, 255, 0.3)',
                   backgroundColor: 'transparent',
                   color: '#FFFFFF'
@@ -214,8 +214,8 @@ export default function ContactPage({ onNavigate }) {
               <div style={iconContainerStyle}>📞</div>
               <h3 style={cardHeadingStyle}>Phone Number</h3>
               <p style={cardBodyStyle}>
-                <strong>Sales & Planning:</strong> +91 44 2450 1234<br/>
-                <strong>Enterprise Support:</strong> +91 44 2450 5678<br/>
+                <strong>Sales & Planning:</strong> +91 87787 40104<br/>
+                <strong>Enterprise Support:</strong> +91 87787 40104<br/>
                 <strong>Business Hours Support:</strong> 9 AM – 6 PM
               </p>
             </div>
@@ -225,9 +225,9 @@ export default function ContactPage({ onNavigate }) {
               <div style={iconContainerStyle}>✉️</div>
               <h3 style={cardHeadingStyle}>Email Address</h3>
               <p style={cardBodyStyle}>
-                <strong>General Enquiries:</strong> contact@magi.com<br/>
-                <strong>Business & Tenders:</strong> projects@magi.com<br/>
-                <strong>Client Support:</strong> engineering@magi.com
+                <strong>General Enquiries:</strong> magirenewables@gmail.com<br/>
+                <strong>Business & Tenders:</strong> magirenewables@gmail.com<br/>
+                <strong>Client Support:</strong> magirenewables@gmail.com
               </p>
             </div>
 
@@ -563,10 +563,10 @@ export default function ContactPage({ onNavigate }) {
                   <strong>Address:</strong> 14, IT Highway, Sholinganallur, Chennai, TN, 600119
                 </div>
                 <div>
-                  <strong>Phone:</strong> +91 44 2450 1234
+                  <strong>Phone:</strong> +91 87787 40104
                 </div>
                 <div>
-                  <strong>Email:</strong> contact@magi.com
+                  <strong>Email:</strong> magirenewables@gmail.com
                 </div>
                 <div>
                   <strong>Landmark:</strong> Opposite Sholinganallur Junction, adjacent to ELCOT IT Park.
@@ -723,7 +723,7 @@ export default function ContactPage({ onNavigate }) {
             <a href="#form-section" className="btn btn-primary">
               Book Consultation
             </a>
-            <a href="tel:+914424501234" className="btn btn-secondary" style={{
+            <a href="tel:+918778740104" className="btn btn-secondary" style={{
               border: '1px solid rgba(255, 255, 255, 0.3)',
               backgroundColor: 'transparent',
               color: '#FFFFFF'
