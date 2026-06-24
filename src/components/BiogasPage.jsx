@@ -147,13 +147,14 @@ export default function BiogasPage({ onNavigate }) {
                 >
                   Get Project Consultation
                 </button>
-                <a href="#solutions" className="btn btn-secondary" style={{
+                <button onClick={() => onNavigate('contact')} className="btn btn-secondary" style={{
                   border: '1px solid rgba(255, 255, 255, 0.3)',
                   backgroundColor: 'transparent',
-                  color: '#FFFFFF'
+                  color: '#FFFFFF',
+                  cursor: 'pointer'
                 }}>
                   Explore Engineering Solutions
-                </a>
+                </button>
               </div>
             </div>
 

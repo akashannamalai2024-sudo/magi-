@@ -180,19 +180,20 @@ export default function SolarPage({ onNavigate }) {
               >
                 Contact
               </button>
-              <a href="#solutions" className="btn" style={{
+              <button onClick={() => onNavigate('contact')} className="btn" style={{
                 backgroundColor: 'transparent',
                 color: '#FFFFFF',
                 border: '1px solid rgba(255,255,255,0.3)',
                 padding: '16px 28px',
                 borderRadius: 'var(--radius-button)',
                 fontWeight: '600',
-                transition: 'var(--transition-fast)'
+                transition: 'var(--transition-fast)',
+                cursor: 'pointer'
               }}
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}>
-                Explore Solutions
-              </a>
+                Explore Engineering Solutions
+              </button>
             </div>
           </div>
 

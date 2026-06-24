@@ -121,7 +121,7 @@ export default function AboutPage({ onNavigate }) {
               Magi Renewable Energy Solutions delivers integrated renewable energy, environmental engineering, waste-to-energy, EV mobility, and sustainable infrastructure solutions for industries, institutions, commercial facilities, and communities.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="#focus-areas" className="btn btn-primary">Explore Our Solutions</a>
+              <button onClick={() => onNavigate('contact')} className="btn btn-primary" style={{ cursor: 'pointer', border: 'none' }}>Explore Our Solutions</button>
               <button 
                 onClick={() => onNavigate('contact')} 
                 className="btn" 

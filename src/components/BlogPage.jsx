@@ -197,9 +197,9 @@ export default function BlogPage({ onNavigate }) {
             </p>
 
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <a href="#featured" className="btn btn-primary">
-                Explore Articles
-              </a>
+              <button onClick={() => onNavigate('contact')} className="btn btn-primary" style={{ cursor: 'pointer', border: 'none' }}>
+                Read Latest Articles
+              </button>
               <button 
                 onClick={() => onNavigate('contact')}
                 className="btn btn-secondary" 
