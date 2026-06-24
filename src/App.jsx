@@ -1489,12 +1489,34 @@ export default function App() {
             
             {/* Col 1 */}
             <div>
-              <h3 style={{ color: '#FFFFFF', fontSize: '24px', marginBottom: '20px' }}>MAGI</h3>
+              <div style={{ marginBottom: '20px' }}>
+                <img 
+                  src="/logo.jpeg" 
+                  alt="Magi Logo" 
+                  style={{
+                    height: '60px',
+                    width: 'auto',
+                    borderRadius: '6px',
+                    objectFit: 'contain'
+                  }}
+                />
+              </div>
               <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.6)', marginBottom: '24px', lineHeight: '1.6' }}>
                 Delivering premium-grade integrated renewable energy and waste infrastructure engineered for high compliance.
               </p>
-              <div style={{ fontSize: '13px' }}>
-                <strong>Office:</strong> Suite 400, Industrial Plaza, LA
+              <div style={{ fontSize: '13px', display: 'flex', flexDirection: 'column', gap: '16px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.5' }}>
+                <div>
+                  <strong style={{ color: '#FFFFFF', display: 'block', marginBottom: '4px' }}>Chennai (Regd. Office):</strong>
+                  4/608, G1, V.O.C Street,<br/>
+                  Perungudi, Palavakkam,<br/>
+                  Chennai, Tamil Nadu - 600041
+                </div>
+                <div>
+                  <strong style={{ color: '#FFFFFF', display: 'block', marginBottom: '4px' }}>Madurai Office:</strong>
+                  P 316, Karpaga Nagar, 11th Street,<br/>
+                  K Pudur, Madurai,<br/>
+                  Tamil Nadu - 625007
+                </div>
               </div>
             </div>
 
