@@ -771,7 +771,7 @@ export default function App() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    height: '80px',
+                    height: '120px',
                     cursor: 'pointer'
                   }}
                   className="logo-ticker-item"
@@ -781,7 +781,7 @@ export default function App() {
                     alt={logo.name} 
                     style={{ 
                       maxHeight: '100%', 
-                      maxWidth: '220px', 
+                      maxWidth: '280px', 
                       objectFit: 'contain'
                     }}
                   />
