@@ -622,15 +622,15 @@ export default function App() {
           playsInline
           style={{
             position: 'absolute',
-            top: '-10%',
-            left: '-10%',
-            width: '120%',
-            height: '120%',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
             objectFit: 'cover',
             zIndex: 0
           }}
         >
-          <source src="/Solar_farms_and_wind_turbines_202606181316.mp4" type="video/mp4" />
+          <source src="/home_hero.mp4" type="video/mp4" />
         </video>
         
         {/* Overlay for text contrast */}
