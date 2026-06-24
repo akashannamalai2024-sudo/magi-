@@ -125,7 +125,7 @@ export default function ContactPage({ onNavigate }) {
 
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <a href="#form-section" className="btn btn-primary">
-                  Schedule Consultation
+                  Contact
                 </a>
                 <a href="tel:+918778740104" className="btn btn-secondary" style={{
                   border: '1px solid rgba(255, 255, 255, 0.3)',
