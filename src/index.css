@@ -139,6 +139,58 @@ a {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Responsive Grid Utilities */
+.responsive-grid-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.responsive-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.responsive-grid-footer {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+}
+.hero-title {
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -2px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 992px) {
+  .responsive-grid-hero {
+    grid-template-columns: 1fr;
+  }
+  .responsive-grid-footer {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .responsive-grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-title {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-grid-2,
+  .responsive-grid-4,
+  .responsive-grid-footer {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 40px;
+  }
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
