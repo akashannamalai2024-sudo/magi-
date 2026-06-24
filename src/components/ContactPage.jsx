@@ -181,68 +181,6 @@ export default function ContactPage({ onNavigate }) {
         `}</style>
       </section>
 
-      {/* SECTION 02 — CONTACT INFORMATION */}
-      <section style={{ padding: '120px 0', backgroundColor: '#FFFFFF' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '42px', color: 'var(--text-dark)', fontWeight: '700', marginBottom: '16px' }}>
-              Get in Touch
-            </h2>
-            <p style={{ fontSize: '18px', color: 'var(--text-muted)', maxWidth: '600px', marginInline: 'auto' }}>
-              Speak with our engineering experts for customized renewable infrastructure solutions.
-            </p>
-          </div>
-
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-            gap: '30px'
-          }}>
-            {/* Card 01 — Address */}
-            <div style={cardStyle} className="contact-info-card">
-              <div style={iconContainerStyle}>📍</div>
-              <h3 style={cardHeadingStyle}>Office Addresses</h3>
-              <div style={{ marginBottom: '20px', width: '100%' }}>
-                <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Chennai (Regd. Office)</h4>
-                <p style={cardBodyStyle}>
-                  4/608, G1, V.O.C Street,<br/>
-                  Perungudi, Palavakkam,<br/>
-                  Chennai, Tamil Nadu - 600041
-                </p>
-              </div>
-              <div style={{ width: '100%' }}>
-                <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Madurai Office</h4>
-                <p style={cardBodyStyle}>
-                  P 316, Karpaga Nagar, 11th Street,<br/>
-                  K Pudur, Madurai,<br/>
-                  Tamil Nadu - 625007
-                </p>
-              </div>
-            </div>
-
-            {/* Card 02 — Phone */}
-            <div style={cardStyle} className="contact-info-card">
-              <div style={iconContainerStyle}>📞</div>
-              <h3 style={cardHeadingStyle}>Phone Number</h3>
-              <p style={cardBodyStyle}>
-                <strong>Sales & Planning:</strong> +91 87787 40104
-              </p>
-            </div>
-
-            {/* Card 03 — Email */}
-            <div style={cardStyle} className="contact-info-card">
-              <div style={iconContainerStyle}>✉️</div>
-              <h3 style={cardHeadingStyle}>Email Address</h3>
-              <p style={cardBodyStyle}>
-                <strong>General Enquiries:</strong> magirenewables@gmail.com
-              </p>
-            </div>
-
-
-          </div>
-        </div>
-      </section>
-
       {/* SECTION 03 — CONTACT FORM */}
       <section id="form-section" style={{ padding: '48px 0', backgroundColor: '#F8FAF9', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
