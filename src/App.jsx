@@ -622,10 +622,10 @@ export default function App() {
           playsInline
           style={{
             position: 'absolute',
-            top: '-5%',
-            left: '-5%',
-            width: '110%',
-            height: '110%',
+            top: '-10%',
+            left: '-10%',
+            width: '120%',
+            height: '120%',
             objectFit: 'cover',
             zIndex: 0
           }}
