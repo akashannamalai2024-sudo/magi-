@@ -328,18 +328,18 @@ nav.sticky.scrolled {
   }
 }
 
-/* Grayscale logo transitions */
-.grayscale-logo-item {
-  opacity: 0.6;
-  filter: grayscale(100%);
+/* Logo ticker transitions */
+.logo-ticker-item {
+  opacity: 0.9;
+  filter: none;
   transition: var(--transition-smooth);
 }
-.grayscale-logo-item:hover {
+.logo-ticker-item:hover {
   opacity: 1;
-  filter: grayscale(0%);
-  color: var(--primary) !important;
-  transform: scale(1.1);
+  filter: none;
+  transform: scale(1.08);
 }
+
 
 /* Hover effects for Services & Why Choose Cards */
 .why-choose-card:hover {

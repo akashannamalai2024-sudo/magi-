@@ -772,10 +772,9 @@ export default function App() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     height: '80px',
-                    transition: 'var(--transition-fast)',
                     cursor: 'pointer'
                   }}
-                  className="grayscale-logo-item"
+                  className="logo-ticker-item"
                 >
                   <img 
                     src={logo.img} 
@@ -783,13 +782,8 @@ export default function App() {
                     style={{ 
                       maxHeight: '100%', 
                       maxWidth: '220px', 
-                      objectFit: 'contain',
-                      opacity: 0.75,
-                      filter: 'grayscale(100%)',
-                      transition: 'all 0.3s ease'
+                      objectFit: 'contain'
                     }}
-                    onMouseEnter={(e) => { e.target.style.opacity = '1'; e.target.style.filter = 'none'; }}
-                    onMouseLeave={(e) => { e.target.style.opacity = '0.75'; e.target.style.filter = 'grayscale(100%)'; }}
                   />
                 </div>
               ))}
