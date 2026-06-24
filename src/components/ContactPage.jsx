@@ -223,9 +223,7 @@ export default function ContactPage({ onNavigate }) {
               <div style={iconContainerStyle}>✉️</div>
               <h3 style={cardHeadingStyle}>Email Address</h3>
               <p style={cardBodyStyle}>
-                <strong>General Enquiries:</strong> magirenewables@gmail.com<br/>
-                <strong>Business & Tenders:</strong> magirenewables@gmail.com<br/>
-                <strong>Client Support:</strong> magirenewables@gmail.com
+                <strong>General Enquiries:</strong> magirenewables@gmail.com
               </p>
             </div>
 
