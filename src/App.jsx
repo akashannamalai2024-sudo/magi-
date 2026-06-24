@@ -655,7 +655,7 @@ export default function App() {
           zIndex: 2
         }} />
 
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '40px', alignItems: 'center', zIndex: 10 }}>
+        <div className="container home-hero-grid" style={{ alignItems: 'center', zIndex: 10 }}>
           
           {/* Left Content */}
           <div>
@@ -675,8 +675,7 @@ export default function App() {
             }}>
               <Sparkles size={12} /> ENGINEERING SUSTAINABLE FUTURES
             </span>
-            <h1 style={{
-              fontSize: '72px',
+            <h1 className="hero-title" style={{
               color: '#FFFFFF',
               fontWeight: '800',
               lineHeight: '1.1',
@@ -685,8 +684,7 @@ export default function App() {
             }}>
               Integrated Renewable <br /> Infrastructure
             </h1>
-            <p style={{
-              fontSize: '20px',
+            <p className="hero-subtitle" style={{
               color: 'rgba(255, 255, 255, 0.85)',
               marginBottom: '40px',
               lineHeight: '1.6',
@@ -706,17 +704,17 @@ export default function App() {
           </div>
 
           {/* Right Content - Floating Glass Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', position: 'relative' }}>
+          <div className="hero-stats-grid" style={{ position: 'relative' }}>
             <div className="glass-card animate-float-1" style={{ padding: '32px', textAlign: 'center' }}>
-              <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>500+</div>
+              <div className="hero-stat-number" style={{ fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>500+</div>
               <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>Renewable Projects</div>
             </div>
             <div className="glass-card animate-float-2" style={{ padding: '32px', textAlign: 'center', marginTop: '24px' }}>
-              <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--accent)', marginBottom: '8px' }}>20+</div>
+              <div className="hero-stat-number" style={{ fontWeight: '800', color: 'var(--accent)', marginBottom: '8px' }}>20+</div>
               <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>Industry Partners</div>
             </div>
             <div className="glass-card animate-float-3" style={{ padding: '32px', textAlign: 'center' }}>
-              <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>100%</div>
+              <div className="hero-stat-number" style={{ fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>100%</div>
               <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>Engineering Driven</div>
             </div>
             <div className="glass-card animate-float-4" style={{ padding: '32px', textAlign: 'center', marginTop: '24px' }}>
@@ -1101,32 +1099,30 @@ export default function App() {
       {/* ENGINEERING IMPACT (COUNTERS) */}
       <section ref={statsSectionRef} style={{ backgroundColor: 'var(--bg-secondary)', padding: '80px 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '32px',
-            textAlign: 'center'
+          <div className="grid-4" style={{
+            textAlign: 'center',
+            gap: '32px'
           }}>
             <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
+              <div className="stats-counter-number" style={{ fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
                 {Math.round(stats.projects)}+
               </div>
               <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Completed Engineering Designs</div>
             </div>
             <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
+              <div className="stats-counter-number" style={{ fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
                 {stats.capacity.toFixed(0)} MW+
               </div>
               <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Installed Renewable Power</div>
             </div>
             <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
+              <div className="stats-counter-number" style={{ fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
                 {Math.round(stats.partners)}+
               </div>
               <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Corporate & Municipal Partners</div>
             </div>
             <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
+              <div className="stats-counter-number" style={{ fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
                 {Math.round(stats.satisfaction)}%
               </div>
               <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Client Retainer Satisfaction</div>
