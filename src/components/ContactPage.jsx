@@ -231,16 +231,7 @@ export default function ContactPage({ onNavigate }) {
               </p>
             </div>
 
-            {/* Card 04 — Hours */}
-            <div style={cardStyle} className="contact-info-card">
-              <div style={iconContainerStyle}>🕒</div>
-              <h3 style={cardHeadingStyle}>Working Hours</h3>
-              <p style={cardBodyStyle}>
-                <strong>Monday – Saturday:</strong> 9:00 AM – 6:00 PM<br/>
-                <strong>Sunday:</strong> Emergency Operations Only<br/>
-                <strong>SLA Engineering Support:</strong> 24/7/365
-              </p>
-            </div>
+
           </div>
         </div>
       </section>
