@@ -20,6 +20,7 @@ import {
 export default function ContactPage({ onNavigate }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [activeFAQ, setActiveFAQ] = useState(null);
+  const [activeOffice, setActiveOffice] = useState(0);
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -201,23 +202,21 @@ export default function ContactPage({ onNavigate }) {
             <div style={cardStyle} className="contact-info-card">
               <div style={iconContainerStyle}>📍</div>
               <h3 style={cardHeadingStyle}>Office Addresses</h3>
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '20px', width: '100%' }}>
-                <div style={{ width: '100%' }}>
-                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Chennai (Regd. Office)</h4>
-                  <p style={cardBodyStyle}>
-                    4/608, G1, V.O.C Street,<br/>
-                    Perungudi, Palavakkam,<br/>
-                    Chennai, Tamil Nadu - 600041
-                  </p>
-                </div>
-                <div style={{ width: '100%' }}>
-                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Madurai Office</h4>
-                  <p style={cardBodyStyle}>
-                    P 316, Karpaga Nagar, 11th Street,<br/>
-                    K Pudur, Madurai,<br/>
-                    Tamil Nadu - 625007
-                  </p>
-                </div>
+              <div style={{ marginBottom: '20px', width: '100%' }}>
+                <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Chennai (Regd. Office)</h4>
+                <p style={cardBodyStyle}>
+                  4/608, G1, V.O.C Street,<br/>
+                  Perungudi, Palavakkam,<br/>
+                  Chennai, Tamil Nadu - 600041
+                </p>
+              </div>
+              <div style={{ width: '100%' }}>
+                <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Madurai Office</h4>
+                <p style={cardBodyStyle}>
+                  P 316, Karpaga Nagar, 11th Street,<br/>
+                  K Pudur, Madurai,<br/>
+                  Tamil Nadu - 625007
+                </p>
               </div>
             </div>
 
@@ -225,28 +224,18 @@ export default function ContactPage({ onNavigate }) {
             <div style={cardStyle} className="contact-info-card">
               <div style={iconContainerStyle}>📞</div>
               <h3 style={cardHeadingStyle}>Phone Number</h3>
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
-                <div style={{ width: '100%' }}>
-                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>Sales & Planning</h4>
-                  <p style={cardBodyStyle}>
-                    +91 87787 40104
-                  </p>
-                </div>
-              </div>
+              <p style={cardBodyStyle}>
+                <strong>Sales & Planning:</strong> +91 87787 40104
+              </p>
             </div>
 
             {/* Card 03 — Email */}
             <div style={cardStyle} className="contact-info-card">
               <div style={iconContainerStyle}>✉️</div>
               <h3 style={cardHeadingStyle}>Email Address</h3>
-              <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%' }}>
-                <div style={{ width: '100%' }}>
-                  <h4 style={{ fontSize: '15px', color: 'var(--text-dark)', fontWeight: '600', margin: '0 0 6px 0' }}>General Enquiries</h4>
-                  <p style={cardBodyStyle}>
-                    magirenewables@gmail.com
-                  </p>
-                </div>
-              </div>
+              <p style={cardBodyStyle}>
+                <strong>General Enquiries:</strong> magirenewables@gmail.com
+              </p>
             </div>
 
 
@@ -515,20 +504,45 @@ export default function ContactPage({ onNavigate }) {
       {/* SECTION 06 — OFFICE LOCATION */}
       <section style={{ padding: '120px 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
             <h2 style={{ fontSize: '42px', color: 'var(--text-dark)', fontWeight: '700', marginBottom: '16px' }}>
               Visit Our Office
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--text-muted)', maxWidth: '600px', marginInline: 'auto' }}>
-              We welcome site planners and procurement officers to visit our head engineering hub.
+              We welcome site planners and procurement officers to visit our engineering hubs.
             </p>
+          </div>
+
+          {/* Office Tabs Selector */}
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '48px', flexWrap: 'wrap' }}>
+            {offices.map((office, idx) => (
+              <button
+                key={office.id}
+                onClick={() => setActiveOffice(idx)}
+                style={{
+                  padding: '12px 28px',
+                  borderRadius: '30px',
+                  border: activeOffice === idx ? '2px solid var(--primary)' : '1px solid var(--border-color)',
+                  backgroundColor: activeOffice === idx ? 'var(--primary)' : '#FFFFFF',
+                  color: activeOffice === idx ? '#FFFFFF' : 'var(--text-dark)',
+                  fontSize: '15px',
+                  fontWeight: '700',
+                  cursor: 'pointer',
+                  transition: 'all 0.25s ease',
+                  boxShadow: activeOffice === idx ? '0 8px 24px rgba(31, 93, 55, 0.2)' : 'none',
+                  outline: 'none'
+                }}
+              >
+                {office.name}
+              </button>
+            ))}
           </div>
 
           <div style={{
             display: 'grid',
             gridTemplateColumns: '1.3fr 0.7fr',
             gap: '48px',
-            alignItems: 'center'
+            alignItems: 'stretch'
           }} className="about-hero-grid">
             
             {/* Left - Interactive Map */}
@@ -536,19 +550,19 @@ export default function ContactPage({ onNavigate }) {
               borderRadius: '24px',
               overflow: 'hidden',
               boxShadow: 'var(--shadow-large)',
-              height: '450px',
+              height: '480px',
               border: '1px solid var(--border-color)',
               position: 'relative'
             }} className="map-container">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0016258223635!2d80.22682497592472!3d12.971764614275095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d8869c9b0e3%3A0xcf95a4325a74ef6f!2sVelachery%20-%20Tambaram%20Main%20Rd%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1703212345678!5m2!1sen!2sin" 
+                src={offices[activeOffice].embedUrl} 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
                 allowFullScreen="" 
                 loading="lazy" 
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Magi Office Location Map"
+                title={`${offices[activeOffice].name} Location Map`}
               ></iframe>
             </div>
 
@@ -558,36 +572,44 @@ export default function ContactPage({ onNavigate }) {
               borderRadius: '24px',
               padding: '40px',
               border: '1px solid var(--border-color)',
-              boxShadow: 'var(--shadow-soft)'
+              boxShadow: 'var(--shadow-soft)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between'
             }}>
-              <span style={{ color: 'var(--primary)', fontWeight: '700', fontSize: '13px', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
-                HEADQUARTERS
-              </span>
-              <h3 style={{ fontSize: '24px', color: 'var(--text-dark)', fontWeight: '700', marginBottom: '20px' }}>
-                Magi Chennai Hub
-              </h3>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '14px', color: 'var(--text-muted)', marginBottom: '32px' }}>
-                <div>
-                  <strong>Address:</strong> 14, IT Highway, Sholinganallur, Chennai, TN, 600119
-                </div>
-                <div>
-                  <strong>Phone:</strong> +91 87787 40104
-                </div>
-                <div>
-                  <strong>Email:</strong> magirenewables@gmail.com
-                </div>
-                <div>
-                  <strong>Landmark:</strong> Opposite Sholinganallur Junction, adjacent to ELCOT IT Park.
-                </div>
-                <div>
-                  <strong>Parking:</strong> Free basement visitor parking with commercial EV charging.
+              <div>
+                <span style={{ color: 'var(--primary)', fontWeight: '700', fontSize: '13px', letterSpacing: '1px', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
+                  {offices[activeOffice].type}
+                </span>
+                <h3 style={{ fontSize: '24px', color: 'var(--text-dark)', fontWeight: '700', marginBottom: '24px' }}>
+                  {offices[activeOffice].name}
+                </h3>
+                
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '18px', fontSize: '14px', color: 'var(--text-muted)', marginBottom: '32px' }}>
+                  <div>
+                    <strong style={{ color: 'var(--text-dark)' }}>Address:</strong><br/>
+                    {offices[activeOffice].address}
+                  </div>
+                  <div>
+                    <strong style={{ color: 'var(--text-dark)' }}>Phone:</strong> {offices[activeOffice].phone}
+                  </div>
+                  <div>
+                    <strong style={{ color: 'var(--text-dark)' }}>Email:</strong> {offices[activeOffice].email}
+                  </div>
+                  <div>
+                    <strong style={{ color: 'var(--text-dark)' }}>Landmark:</strong><br/>
+                    {offices[activeOffice].landmark}
+                  </div>
+                  <div>
+                    <strong style={{ color: 'var(--text-dark)' }}>Parking:</strong><br/>
+                    {offices[activeOffice].parking}
+                  </div>
                 </div>
               </div>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                 <a 
-                  href="https://maps.google.com/?q=Sholinganallur+Junction+Chennai" 
+                  href={`https://maps.google.com/?q=${offices[activeOffice].searchQuery}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn btn-primary"
@@ -596,7 +618,7 @@ export default function ContactPage({ onNavigate }) {
                   Get Directions <ArrowUpRight size={16} />
                 </a>
                 <a 
-                  href="https://maps.google.com/?q=Sholinganallur+Junction+Chennai" 
+                  href={`https://maps.google.com/?q=${offices[activeOffice].searchQuery}`} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="btn"
@@ -758,9 +780,7 @@ const cardStyle = {
   flexDirection: 'column',
   alignItems: 'flex-start',
   transition: 'all 0.3s ease',
-  cursor: 'pointer',
-  height: '100%',
-  boxSizing: 'border-box'
+  cursor: 'pointer'
 };
 
 const iconContainerStyle = {
@@ -811,3 +831,30 @@ const inputStyle = {
   transition: 'border-color 0.2s ease',
   boxSizing: 'border-box'
 };
+
+const offices = [
+  {
+    id: 'chennai',
+    name: 'Magi Chennai Hub',
+    type: 'Registered Office',
+    address: '4/608, G1, V.O.C Street, Perungudi, Palavakkam, Chennai, Tamil Nadu - 600041',
+    phone: '+91 87787 40104',
+    email: 'magirenewables@gmail.com',
+    landmark: 'Near Palavakkam ECR Road, Perungudi Area.',
+    parking: 'Free visitor parking available.',
+    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.915758253164!2d80.2483861!3d12.9649556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d43a5796245%3A0x633515f4eb178b5e!2sV.O.C%20St%2C%20Palavakkam%2C%20Chennai%2C%20Tamil%20Nadu%20600041!5e0!3m2!1sen!2sin!4v1719220000000!5m2!1sen!2sin',
+    searchQuery: '4/608,+G1,+V.O.C+Street,+Perungudi,+Palavakkam,+Chennai,+Tamil+Nadu+600041'
+  },
+  {
+    id: 'madurai',
+    name: 'Magi Madurai Branch',
+    type: 'Regional Office',
+    address: 'P 316, Karpaga Nagar, 11th Street, K Pudur, Madurai, Tamil Nadu - 625007',
+    phone: '+91 87787 40104',
+    email: 'magirenewables@gmail.com',
+    landmark: 'Pudur Bazaar Sub Post Office Lane.',
+    parking: 'Dedicated campus and street parking available.',
+    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.988118029598!2d78.1388836!3d9.934947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b00c5df600b396b%3A0x334d70b6d2780e8e!2sKarpaga%20Nagar%2011th%20St%2C%20K.Pudur%2C%20Madurai%2C%20Tamil%20Nadu%20625007!5e0!3m2!1sen!2sin!4v1719220100000!5m2!1sen!2sin',
+    searchQuery: 'Karpaga+Nagar+11th+St,+K.Pudur,+Madurai,+Tamil+Nadu+625007'
+  }
+];
