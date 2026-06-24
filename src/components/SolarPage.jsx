@@ -720,23 +720,32 @@ export default function SolarPage({ onNavigate }) {
             Partner with Magi Renewable Energy Solutions to design and implement reliable, scalable, and future-ready solar systems tailored to your operational needs.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-            <a href="#consultant" className="btn btn-primary">
-              Schedule Consultation
-            </a>
-            <a href="#consultant" className="btn" style={{
-              backgroundColor: 'transparent',
-              color: '#FFFFFF',
-              border: '1px solid rgba(255,255,255,0.3)',
-              padding: '16px 28px',
-              borderRadius: 'var(--radius-button)',
-              fontWeight: '600',
-              textDecoration: 'none',
-              transition: 'var(--transition-fast)'
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}>
+            <button 
+              onClick={() => onNavigate('contact')} 
+              className="btn btn-primary" 
+              style={{ cursor: 'pointer', border: 'none' }}
+            >
+              Contact
+            </button>
+            <button 
+              onClick={() => onNavigate('contact')} 
+              className="btn" 
+              style={{
+                backgroundColor: 'transparent',
+                color: '#FFFFFF',
+                border: '1px solid rgba(255,255,255,0.3)',
+                padding: '16px 28px',
+                borderRadius: 'var(--radius-button)',
+                fontWeight: '600',
+                textDecoration: 'none',
+                transition: 'var(--transition-fast)',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
+            >
               Talk to an Engineer
-            </a>
+            </button>
           </div>
         </div>
       </section>
