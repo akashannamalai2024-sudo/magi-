@@ -197,7 +197,13 @@ export default function SolarPage({ onNavigate }) {
               Delivering customized solar energy systems that reduce operating costs, improve energy independence, and support long-term sustainability across industries, institutions, and commercial facilities.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <a href="#consultant" className="btn btn-primary">Request Consultation</a>
+              <button 
+                onClick={() => onNavigate('contact')} 
+                className="btn btn-primary" 
+                style={{ cursor: 'pointer', border: 'none' }}
+              >
+                Contact
+              </button>
               <a href="#solutions" className="btn" style={{
                 backgroundColor: 'transparent',
                 color: '#FFFFFF',
