@@ -498,19 +498,7 @@ export default function App() {
               </div>
             </div>
 
-            <a 
-              href="#clients" 
-              onClick={(e) => { e.preventDefault(); handleNavigate('home', 'clients'); }}
-              className="nav-item-link" 
-              style={{
-                fontSize: '15px',
-                fontWeight: '600',
-                color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
-                transition: 'var(--transition-fast)'
-              }}
-            >
-              Our Clients
-            </a>
+
             <a 
               href="#blog" 
               onClick={(e) => { e.preventDefault(); handleNavigate('blog'); }}
@@ -605,7 +593,7 @@ export default function App() {
               </div>
             </div>
 
-            <a href="#clients" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'clients'); }} style={{ color: 'var(--text-dark)' }}>Our Clients</a>
+
             <a href="#blog" onClick={(e) => { e.preventDefault(); handleNavigate('blog'); }} style={{ color: 'var(--text-dark)' }}>Blog</a>
             <a href="#faq" onClick={(e) => { e.preventDefault(); handleNavigate('faq'); }} style={{ color: 'var(--text-dark)' }}>FAQs</a>
             <a href="#contact" onClick={(e) => { e.preventDefault(); handleNavigate('home', 'contact'); }} style={{ color: 'var(--text-dark)' }}>Contact Us</a>
