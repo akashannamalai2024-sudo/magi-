@@ -144,9 +144,13 @@ export default function SanitationPage({ onNavigate }) {
               </p>
 
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                <a href="#consultant" className="btn btn-primary">
+                <button 
+                  onClick={() => onNavigate('contact')} 
+                  className="btn btn-primary"
+                  style={{ cursor: 'pointer', border: 'none' }}
+                >
                   Get Consultation
-                </a>
+                </button>
                 <a href="#solutions" className="btn btn-secondary" style={{
                   border: '1px solid rgba(255, 255, 255, 0.3)',
                   backgroundColor: 'transparent',

@@ -278,7 +278,7 @@ export default function BlogPage({ onNavigate }) {
       </section>
 
       {/* SECTION 4 — LATEST ARTICLES */}
-      <section style={{ padding: '120px 0', backgroundColor: '#FFFFFF' }}>
+      <section id="featured" style={{ padding: '120px 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
           
           <div style={{ marginBottom: '60px' }}>

@@ -707,9 +707,13 @@ export default function App() {
               Delivering customized, high-precision engineering solutions across Solar, Biogas, EV Mobility, and Eco Sanitation for industries, governments, and forward-thinking organizations.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <a href="#consultation" className="btn btn-accent" style={{ padding: '16px 36px' }}>
+              <button 
+                onClick={() => handleNavigate('contact')} 
+                className="btn btn-accent" 
+                style={{ padding: '16px 36px', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+              >
                 Contact Us <ArrowRight size={18} />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -930,8 +934,11 @@ export default function App() {
                       </ul>
                     </div>
 
-                    <a 
-                      href="#consultation" 
+                    <button 
+                      onClick={() => {
+                        const routes = ['solar', 'biogas', 'ev', 'sanitation'];
+                        handleNavigate(routes[idx]);
+                      }}
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
@@ -940,12 +947,16 @@ export default function App() {
                         fontWeight: '700',
                         fontSize: '14px',
                         textDecoration: 'none',
-                        transition: 'var(--transition-fast)'
+                        transition: 'var(--transition-fast)',
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        padding: 0
                       }}
                       className="explore-wave-link"
                     >
                       Explore Solutions <ArrowRight size={14} style={{ transition: 'transform 0.2s ease' }} />
-                    </a>
+                    </button>
                   </div>
                 </div>
               );
@@ -1291,9 +1302,13 @@ export default function App() {
                 Insights & Sustainability Updates
               </h2>
             </div>
-            <a href="#blog" className="btn btn-secondary">
+            <button 
+              onClick={() => handleNavigate('blog')} 
+              className="btn btn-secondary"
+              style={{ display: 'inline-flex', alignItems: 'center', cursor: 'pointer', border: 'none' }}
+            >
               View All Articles <ArrowRight size={16} />
-            </a>
+            </button>
           </div>
 
           {/* Infinite Blog Ticker Container */}
@@ -1324,16 +1339,23 @@ export default function App() {
                     <h3 style={{ fontSize: '20px', color: 'var(--text-dark)', marginBottom: '20px', flexGrow: 1, lineHeight: '1.4' }}>
                       {post.title}
                     </h3>
-                    <a href="#blog" style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
-                      color: 'var(--primary)',
-                      fontWeight: '700',
-                      fontSize: '15px'
-                    }}>
+                    <button 
+                      onClick={() => handleNavigate('blog')}
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        color: 'var(--primary)',
+                        fontWeight: '700',
+                        fontSize: '15px',
+                        background: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
+                        padding: 0
+                      }}
+                    >
                       Read Article <ArrowUpRight size={16} />
-                    </a>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -1431,9 +1453,13 @@ export default function App() {
           </p>
 
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <a href="#consultation" className="btn btn-accent" style={{ padding: '16px 36px' }}>
+            <button 
+              onClick={() => handleNavigate('contact')} 
+              className="btn btn-accent" 
+              style={{ padding: '16px 36px', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px' }}
+            >
               Contact Us <ArrowRight size={18} />
-            </a>
+            </button>
           </div>
 
         </div>
@@ -1512,7 +1538,7 @@ export default function App() {
             </div>
 
             {/* Col 4 */}
-            <div>
+            <div id="newsletter">
               <h4 style={{ color: '#FFFFFF', fontSize: '16px', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '1px' }}>
                 Newsletter
               </h4>

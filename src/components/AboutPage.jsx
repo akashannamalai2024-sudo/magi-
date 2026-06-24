@@ -122,23 +122,28 @@ export default function AboutPage({ onNavigate }) {
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
               <a href="#focus-areas" className="btn btn-primary">Explore Our Solutions</a>
-              <a href="#cta" className="btn" style={{
-                backgroundColor: 'transparent',
-                color: '#FFFFFF',
-                border: '1px solid rgba(255,255,255,0.3)',
-                padding: '16px 28px',
-                borderRadius: 'var(--radius-button)',
-                fontWeight: '600',
-                transition: 'var(--transition-fast)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }}>
+              <button 
+                onClick={() => onNavigate('contact')} 
+                className="btn" 
+                style={{
+                  backgroundColor: 'transparent',
+                  color: '#FFFFFF',
+                  border: '1px solid rgba(255,255,255,0.3)',
+                  padding: '16px 28px',
+                  borderRadius: 'var(--radius-button)',
+                  fontWeight: '600',
+                  cursor: 'pointer',
+                  transition: 'var(--transition-fast)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
                 Contact Our Team
-              </a>
+              </button>
             </div>
           </div>
 
@@ -799,10 +804,10 @@ export default function AboutPage({ onNavigate }) {
             Whether you're planning a renewable energy project, waste-to-energy facility, EV charging station infrastructure, or eco-sanitation treatment system, our engineering team is ready to deliver.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-            <button onClick={() => onNavigate('home', 'consultation')} className="btn btn-primary">
+            <button onClick={() => onNavigate('contact')} className="btn btn-primary">
               Get Consultation
             </button>
-            <button onClick={() => onNavigate('home', 'contact')} className="btn" style={{
+            <button onClick={() => onNavigate('contact')} className="btn" style={{
               backgroundColor: 'transparent',
               color: '#FFFFFF',
               border: '1px solid rgba(255,255,255,0.3)',
