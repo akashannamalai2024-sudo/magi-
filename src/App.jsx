@@ -352,7 +352,12 @@ export default function App() {
     { name: "GRT Institute of Engineering & Technology", img: "/images/logos/grt_logo.png" },
     { name: "Rajalakshmi Engineering College", img: "/images/logos/rec_logo.png" },
     { name: "Ethiraj College for Women", img: "/images/logos/ethiraj_logo.png" },
-    { name: "Subbulakshmi Lakshmipathy College of Science", img: "/images/logos/slcs_logo.png" }
+    { name: "Subbulakshmi Lakshmipathy College of Science", img: "/images/logos/slcs_logo.png" },
+    { name: "Sri S. Ramaswamy Naidu Memorial College", img: "/images/logos/srnmc_logo.png" },
+    { name: "Lord Jeganath College of Engineering & Technology", img: "/images/logos/ljcet_logo.png" },
+    { name: "PSN College of Engineering & Technology", img: "/images/logos/psncet_logo.png" },
+    { name: "Idhaya College For Women", img: "/images/logos/idhaya_logo.png" },
+    { name: "Ultra College of Engineering & Technology", img: "/images/logos/ultra_logo.png" }
   ];
 
   return (
