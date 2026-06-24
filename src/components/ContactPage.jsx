@@ -214,9 +214,7 @@ export default function ContactPage({ onNavigate }) {
               <div style={iconContainerStyle}>📞</div>
               <h3 style={cardHeadingStyle}>Phone Number</h3>
               <p style={cardBodyStyle}>
-                <strong>Sales & Planning:</strong> +91 87787 40104<br/>
-                <strong>Enterprise Support:</strong> +91 87787 40104<br/>
-                <strong>Business Hours Support:</strong> 9 AM – 6 PM
+                <strong>Sales & Planning:</strong> +91 87787 40104
               </p>
             </div>
 
