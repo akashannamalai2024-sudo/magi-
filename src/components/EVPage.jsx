@@ -27,6 +27,7 @@ import {
   Layers,
   Leaf
 } from 'lucide-react';
+import OtherServices from './OtherServices';
 
 export default function EVPage({ onNavigate }) {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -629,49 +630,50 @@ export default function EVPage({ onNavigate }) {
       </section>
 
       {/* SECTION 9 — QUALITY PARTNERSHIPS */}
-      <section style={{ padding: '140px 0', backgroundColor: 'var(--bg-secondary)' }}>
+      <section style={{ padding: '60px 0', backgroundColor: 'var(--bg-secondary)' }}>
         <div className="container">
           
-          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-            <span style={{ color: 'var(--primary)', fontSize: '14px', fontWeight: '700', letterSpacing: '1.5px', display: 'block', marginBottom: '16px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span style={{ color: 'var(--primary)', fontSize: '12px', fontWeight: '700', letterSpacing: '1.5px', display: 'block', marginBottom: '12px' }}>
               ALLIANCES
             </span>
-            <h2 style={{ fontSize: '40px', fontWeight: '800' }}>
+            <h2 style={{ fontSize: '32px', fontWeight: '800' }}>
               Trusted Mobility Technology Partners
             </h2>
           </div>
 
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '30px'
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '20px',
+            maxWidth: '600px',
+            margin: '0 auto'
           }} className="about-hero-grid">
             {[
               { name: 'Roots Industries', desc: 'OEM structural assembly and composite panel chassis components.' },
-              { name: 'Yamaha Corporation', desc: 'Premium quality drive motor loops and steering assemblies.' },
-              { name: 'TVS E-Mobility', desc: 'Battery management software systems and cell thermal safety loops.' }
+              { name: 'Yamaha Corporation', desc: 'Premium quality drive motor loops and steering assemblies.' }
             ].map((partner, idx) => (
               <div 
                 key={idx}
                 style={{
                   backgroundColor: '#FFFFFF',
-                  borderRadius: '20px',
-                  padding: '40px',
+                  borderRadius: '16px',
+                  padding: '24px',
                   boxShadow: 'var(--shadow-soft)',
                   border: '1px solid var(--border-color)',
                   textAlign: 'center'
                 }}
               >
                 <div style={{
-                  fontSize: '24px',
+                  fontSize: '20px',
                   fontWeight: '800',
                   color: 'var(--primary)',
-                  marginBottom: '16px',
+                  marginBottom: '12px',
                   letterSpacing: '0.5px'
                 }}>
                   {partner.name}
                 </div>
-                <p style={{ fontSize: '14px', color: 'var(--text-muted)', lineHeight: '1.6', margin: 0 }}>
+                <p style={{ fontSize: '13px', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
                   {partner.desc}
                 </p>
               </div>
@@ -814,6 +816,8 @@ export default function EVPage({ onNavigate }) {
       </section>
 
       {/* SECTION 12 — FINAL CTA */}
+      <OtherServices currentService="ev" onNavigate={onNavigate} />
+
       <section style={{
         position: 'relative',
         padding: '140px 0',
@@ -872,7 +876,6 @@ export default function EVPage({ onNavigate }) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

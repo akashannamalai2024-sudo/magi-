@@ -32,7 +32,7 @@ export default function BlogPage({ onNavigate }) {
     'Solar Energy', 
     'Biogas', 
     'EV Mobility', 
-    'Eco Sanitation', 
+    'Bio Septic Tanks & Mobile Toilets', 
     'Sustainability', 
     'Engineering', 
     'Technology'
@@ -64,11 +64,11 @@ export default function BlogPage({ onNavigate }) {
       image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=500&q=80"
     },
     {
-      title: "Sustainable Water Management: Greywater and ZLD Loop Routing",
-      category: "Eco Sanitation",
+      title: "Sustainable Sanitation: Deploying High-Capacity Bio Septic Networks",
+      category: "Bio Septic Tanks & Mobile Toilets",
       date: "May 28, 2026",
       readTime: "6 min read",
-      desc: "Environmental sanitation layouts ensuring Zero Liquid Discharge compliance across hospital and educational estates.",
+      desc: "Environmental sanitation layouts ensuring high public health compliance across hospital and educational estates.",
       image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=500&q=80"
     },
     {

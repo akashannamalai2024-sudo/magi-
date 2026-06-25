@@ -23,6 +23,7 @@ import {
   TrendingUp,
   DollarSign
 } from 'lucide-react';
+import OtherServices from './OtherServices';
 
 export default function SanitationPage({ onNavigate }) {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -34,44 +35,24 @@ export default function SanitationPage({ onNavigate }) {
 
   const services = [
     {
-      title: "Bio Septic Tank Systems",
-      image: "/sani_septic_tank.png",
-      desc: "Environmentally responsible biological wastewater treatment units designed for continuous digestion loops."
-    },
-    {
-      title: "Portable Eco Toilets",
+      title: "Portable Toilets",
       image: "/sani_portable.png",
-      desc: "High-compliance, decentralized mobile sanitation blocks engineered for site logistics and remote infrastructure."
+      desc: "High-compliance portable sanitation blocks engineered for site logistics and rapid deployment."
     },
     {
-      title: "Institutional Sanitation Infrastructure",
-      image: "/sani_institutional.png",
-      desc: "Large-scale waste management networks tailored for colleges, universities, and commercial complexes."
-    },
-    {
-      title: "Decentralized Wastewater Management",
-      image: "/sani_wastewater.png",
-      desc: "Source-separated biological treatment systems reducing transport fees and drainage loading."
-    },
-    {
-      title: "Eco-Friendly Toilet Solutions",
-      image: "/sani_ecotoilet.png",
-      desc: "Hygienic sanitation facilities configured to utilize minimal water and zero chemical additives."
-    },
-    {
-      title: "Rural & Remote Area Sanitation",
-      image: "/sani_rural.png",
-      desc: "Reliable environmental engineering bringing hygienic infrastructure to off-grid townships."
-    },
-    {
-      title: "Community Sanitation Facilities",
+      title: "Mobile Toilets",
       image: "/sani_community.png",
-      desc: "Scalable utility complexes constructed for high-frequency civic and public usage."
+      desc: "Scalable and easily relocatable mobile utility complexes constructed for civic and public usage."
     },
     {
-      title: "Sustainable Water & Waste Management Support",
-      image: "/sani_zld.png",
-      desc: "Consultative engineering ensuring zero liquid discharge (ZLD) compliance and nutrient recycling."
+      title: "FRP Toilets",
+      image: "/sani_ecotoilet.png",
+      desc: "Highly durable, weather-resistant Fiber-Reinforced Plastic cabins configured for minimal maintenance."
+    },
+    {
+      title: "Bio Septic Tanks",
+      image: "/sani_septic_tank.png",
+      desc: "Environmentally responsible bio septic tanks designed for continuous, safe organic breakdown."
     }
   ];
 
@@ -94,17 +75,12 @@ export default function SanitationPage({ onNavigate }) {
       }}>
 
         <div className="container" style={{ position: 'relative', zIndex: 2, width: '100%' }}>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1.2fr 0.8fr',
-            gap: '40px',
-            alignItems: 'center'
-          }} className="about-hero-grid">
+          <div className="about-hero-grid">
             
             {/* Left Content */}
             <div>
               <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.6)', marginBottom: '16px' }}>
-                Home → Services → Bio Septic Tanks & Eco Sanitation
+                Home → Services → Bio Septic Tanks and Mobile Toilets
               </div>
               <span style={{
                 display: 'inline-block',
@@ -118,7 +94,7 @@ export default function SanitationPage({ onNavigate }) {
                 marginBottom: '24px',
                 color: 'var(--secondary)'
               }}>
-                ENVIRONMENTAL SANITATION ENGINEERING
+                BIO SEPTIC TANKS & MOBILE TOILETS
               </span>
               
               <h1 style={{
@@ -128,9 +104,9 @@ export default function SanitationPage({ onNavigate }) {
                 marginBottom: '24px',
                 color: '#FFFFFF'
               }}>
-                Engineering Sustainable <br/>
-                <span style={{ color: 'var(--secondary)' }}>Sanitation Infrastructure</span> <br/>
-                for Healthier Communities
+                Premium <br/>
+                <span style={{ color: 'var(--secondary)' }}>Bio Septic Tanks</span> <br/>
+                and Mobile Toilets
               </h1>
               
               <p style={{
@@ -140,7 +116,7 @@ export default function SanitationPage({ onNavigate }) {
                 maxWidth: '620px',
                 lineHeight: '1.7'
               }}>
-                Delivering advanced bio septic systems, eco sanitation infrastructure, and decentralized wastewater management that create cleaner, healthier, and environmentally responsible communities.
+                Delivering advanced bio septic systems, durable FRP cabins, and mobile sanitation infrastructure that create cleaner, healthier, and environmentally responsible communities.
               </p>
 
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -170,10 +146,10 @@ export default function SanitationPage({ onNavigate }) {
               position: 'relative'
             }}>
               {[
-                { title: 'Bio Septic Systems', desc: 'Biological waste breakdown chambers.' },
-                { title: 'Eco Sanitation Facilities', desc: 'Minimizing environmental footprints.' },
-                { title: 'Wastewater Management', desc: 'Decentralized ZLD water cycles.' },
-                { title: 'Environmental Engineering', desc: 'High compliance public health audits.' }
+                { title: 'Portable Toilets', desc: 'High-compliance portable sanitation blocks.' },
+                { title: 'Mobile Toilets', desc: 'Easily relocatable utility complexes.' },
+                { title: 'FRP Toilets', desc: 'High compliance, weather-resistant cabins.' },
+                { title: 'Bio Septic Tanks', desc: 'Biological waste breakdown chambers.' }
               ].map((card, idx) => (
                 <div 
                   key={idx}
@@ -213,12 +189,7 @@ export default function SanitationPage({ onNavigate }) {
       {/* SECTION 2 — SERVICE OVERVIEW */}
       <section style={{ padding: '140px 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1.1fr',
-            gap: '80px',
-            alignItems: 'center'
-          }} className="about-hero-grid">
+          <div className="about-hero-grid">
             
             {/* Left Image */}
             <div style={{ position: 'relative' }}>
@@ -263,7 +234,7 @@ export default function SanitationPage({ onNavigate }) {
                 color: 'var(--text-muted)',
                 marginBottom: '36px'
               }}>
-                Magi provides environmentally responsible sanitation infrastructure through advanced bio septic tanks, eco sanitation systems, decentralized wastewater management, and sustainable engineering solutions. We align facility water streams to meet zero-leachate standards, protecting local soils and safeguarding public health.
+                Magi provides environmentally responsible sanitation infrastructure through advanced bio septic tanks, FRP cabins, mobile toilets, and sustainable engineering solutions. We design systems to meet high public health compliance, protecting local environments.
               </p>
 
               {/* Grid Features */}
@@ -273,7 +244,7 @@ export default function SanitationPage({ onNavigate }) {
                 gap: '24px'
               }}>
                 {[
-                  { title: 'Wastewater Management', desc: 'Efficient organic load degradation inside anaerobic chambers.', icon: Droplet },
+                  { title: 'Portable Solutions', desc: 'Mobile and FRP toilets designed for rapid deployment.', icon: Droplet },
                   { title: 'Environmental Protection', desc: 'Eliminates chemical leachate and prevents heavy metal ground seepage.', icon: Leaf },
                   { title: 'Public Health', desc: 'Axiomatic design loops that curb pathogens and protect local zones.', icon: HeartPulse },
                   { title: 'Sustainable Infrastructure', desc: 'Pre-cast, structural-grade setups built for decadal reliability.', icon: ShieldCheck }
@@ -319,7 +290,7 @@ export default function SanitationPage({ onNavigate }) {
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
             <h2 style={{ fontSize: '44px', fontWeight: '800' }}>
               Comprehensive <br/>
-              <span style={{ color: 'var(--primary)' }}>Eco Sanitation Solutions</span>
+              <span style={{ color: 'var(--primary)' }}>Sanitation Solutions</span>
             </h2>
           </div>
 
@@ -362,15 +333,10 @@ export default function SanitationPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* SECTION 4 — WHY ECO SANITATION */}
+      {/* SECTION 4 — WHY MAGI SANITATION */}
       <section style={{ padding: '140px 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1.1fr',
-            gap: '80px',
-            alignItems: 'center'
-          }} className="about-hero-grid">
+          <div className="about-hero-grid">
             
             {/* Left Image */}
             <div style={{ position: 'relative' }}>
@@ -406,7 +372,7 @@ export default function SanitationPage({ onNavigate }) {
                 {[
                   { title: 'Cleaner Environment', desc: 'Eliminates open stagnation pools and controls organic odors.', icon: Leaf },
                   { title: 'Improved Public Health', desc: 'Prevents vector breeding zones, reducing disease transmission.', icon: HeartPulse },
-                  { title: 'Efficient Treatment', desc: 'Utilizes multi-chamber digestion loops to break down organic loads quickly.', icon: Droplet },
+                  { title: 'Efficient Breakdown', desc: 'Utilizes multi-chamber digestion loops to break down organic loads quickly.', icon: Droplet },
                   { title: 'Reduced Impact', desc: 'Pre-cast concrete panels prevent toxic chemicals leaking into soil.', icon: Trash2 },
                   { title: 'Water Conservation', desc: 'Integrates greywater separation to save water for landscaping.', icon: Droplet },
                   { title: 'Long-Term Sustainability', desc: 'A durable setup built with industrial-grade structural concrete.', icon: ShieldCheck }
@@ -518,9 +484,9 @@ export default function SanitationPage({ onNavigate }) {
             justifyContent: 'space-between',
             gap: '30px',
             position: 'relative'
-          }} className="about-hero-grid">
+          }}>
             {[
-              { num: '01', title: 'Requirement Analysis', desc: 'Studying daily wastewater volume loads.' },
+              { num: '01', title: 'Requirement Analysis', desc: 'Studying daily sanitation volume loads.' },
               { num: '02', title: 'Site Inspection', desc: 'Evaluating water table heights and geological characteristics.' },
               { num: '03', title: 'Engineering Design', desc: 'Determining correct multi-chamber volumes and layout.' },
               { num: '04', title: 'System Planning', desc: 'Drafting plumbing integration paths and backup release systems.' },
@@ -619,15 +585,11 @@ export default function SanitationPage({ onNavigate }) {
             </h2>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, 1fr)',
-            gap: '32px'
-          }} className="about-hero-grid">
+          <div style={{ gap: '32px' }} className="responsive-grid-4">
             {[
               { num: '100%', desc: 'Hygienic containment preventing groundwater contamination.' },
               { num: 'Zero', desc: 'Need for routine chemical additives or toxic scrubbers.' },
-              { num: 'ZLD', desc: 'Zero Liquid Discharge compatible configuration pathways.' },
+              { num: 'FRP', desc: 'Highly durable, weather-resistant Fiber-Reinforced Plastic.' },
               { num: '30yr', desc: 'Design operational lifespan using pre-cast structural shells.' }
             ].map((card, idx) => (
               <div 
@@ -736,15 +698,15 @@ export default function SanitationPage({ onNavigate }) {
             {[
               {
                 q: "What is a bio septic tank?",
-                a: "A bio septic tank utilizes anaerobic biological cultures to digest blackwater waste solids, transforming them into clear water effluent and minimal gas by-products. This prevents sludge build-up and groundwater contamination."
+                a: "A bio septic tank utilizes anaerobic biological cultures to digest blackwater waste solids, transforming them into clear water output and minimal gas by-products. This prevents sludge build-up and groundwater contamination."
               },
               {
-                q: "How does eco sanitation work?",
-                a: "Eco sanitation focuses on source separation (separating greywater from blackwater) to treat wastewater close to the source with low energy input, enabling high resource recycling rates."
+                q: "How do your sanitation systems work?",
+                a: "Our sanitation solutions focus on durable, decentralized systems like bio septic tanks and portable toilets to safely manage waste without complex infrastructure."
               },
               {
                 q: "Where can these systems be installed?",
-                a: "Magi septic and eco sanitation systems can be installed across all terrains, including high water table locations, remote construction sites, commercial complex substructures, and municipal campuses."
+                a: "Magi septic and mobile toilet systems can be installed across all terrains, including high water table locations, remote construction sites, commercial complex substructures, and municipal campuses."
               },
               {
                 q: "Do you provide maintenance?",
@@ -756,7 +718,7 @@ export default function SanitationPage({ onNavigate }) {
               },
               {
                 q: "How long does the installation take?",
-                a: "Standard bio septic tank installation takes 1-2 weeks. Large-scale decentralized institutional wastewater grids require 6-8 weeks."
+                a: "Standard bio septic tank installation takes 1-2 weeks. Large-scale decentralized institutional sanitation grids require 6-8 weeks."
               }
             ].map((faq, idx) => (
               <div 
@@ -806,6 +768,8 @@ export default function SanitationPage({ onNavigate }) {
       </section>
 
       {/* SECTION 12 — FINAL CTA */}
+      <OtherServices currentService="sanitation" onNavigate={onNavigate} />
+
       <section style={{
         position: 'relative',
         padding: '140px 0',
@@ -864,7 +828,6 @@ export default function SanitationPage({ onNavigate }) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

@@ -25,6 +25,7 @@ import {
   Lightbulb,
   Truck
 } from 'lucide-react';
+import OtherServices from './OtherServices';
 
 export default function SolarPage({ onNavigate }) {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -35,85 +36,40 @@ export default function SolarPage({ onNavigate }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    let observer;
-    let interval;
-    if (statsSectionRef.current) {
-      observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          setStats({ cleanEnergy: 0, costSaved: 0, co2: 0, uptime: 0 });
-          
-          interval = setInterval(() => {
-            setStats(prev => {
-              const next = { ...prev };
-              let updated = false;
-              if (next.cleanEnergy < 120) { next.cleanEnergy += 6; updated = true; }
-              if (next.costSaved < 40) { next.costSaved += 2; updated = true; }
-              if (next.co2 < 8500) { next.co2 += 425; updated = true; }
-              if (next.uptime < 99) { next.uptime += 5; updated = true; }
-              else if (next.uptime < 99.9) { next.uptime = 99.9; updated = true; }
-              
-              if (!updated) {
-                clearInterval(interval);
-              }
-              return next;
-            });
-          }, 50);
-          observer.disconnect();
-        }
-      }, { threshold: 0.15 });
-      
-      observer.observe(statsSectionRef.current);
-    }
-
-    return () => {
-      if (observer) observer.disconnect();
-      if (interval) clearInterval(interval);
-    };
   }, []);
 
 
 
   const solarSolutions = [
     {
-      title: "Industrial Rooftop Solar",
+      title: "Consultation",
       image: "/solar_ind_rooftop.png",
-      desc: "Custom-designed high-compliance rooftop solar systems for factories, warehouses, and manufacturing hubs."
+      desc: "Expert advisory services to evaluate your energy needs and define the ideal solar infrastructure scope."
     },
     {
-      title: "Ground Mounted Solar",
-      image: "/solar_ground.png",
-      desc: "Utility-scale, structural-grade solar arrays engineered for large corporate land holdings and energy parks."
-    },
-    {
-      title: "Institutional Solar",
-      image: "/solar_institutional.png",
-      desc: "Clean power infrastructure tailored for universities, medical campuses, and large institutional sites."
-    },
-    {
-      title: "Commercial Solar",
-      image: "/solar_commercial.png",
-      desc: "Energy-efficient commercial building integrations optimized for green building status and operations savings."
-    },
-    {
-      title: "Solar Street Lighting",
-      image: "/solar_street.png",
-      desc: "Smart solar illumination systems integrated with automated timers and dimming sensors for long driveways."
-    },
-    {
-      title: "Hybrid Solar Systems",
-      image: "/solar_hybrid.png",
-      desc: "BESS storage solutions paired with solar arrays for backup security and peak shaving capabilities."
-    },
-    {
-      title: "Operation & Maintenance",
+      title: "Energy Assessment",
       image: "/solar_om.png",
-      desc: "Routine solar array thermal analysis, cleaning, voltage checks, and diagnostics to safeguard output yields."
+      desc: "Detailed load profiling and consumption analysis to right-size your solar panel and lighting investments."
     },
     {
-      title: "Energy Optimization",
+      title: "Site Survey",
+      image: "/solar_ground.png",
+      desc: "Thorough physical and structural evaluations ensuring the site is ready and secure for installation."
+    },
+    {
+      title: "Installation",
+      image: "/solar_commercial.png",
+      desc: "End-to-end professional deployment of premium solar panels and street lighting infrastructure."
+    },
+    {
+      title: "Testing & Commissioning",
+      image: "/solar_hybrid.png",
+      desc: "Rigorous system checks, electrical safety validation, and grid synchronization to guarantee performance."
+    },
+    {
+      title: "Annual Maintenance Contracts (AMC)",
       image: "/solar_opt.png",
-      desc: "Analytical dashboard integrations providing detailed performance diagnostics and predictive yield calculations."
+      desc: "Comprehensive preventative maintenance and service agreements to maximize long-term energy yields."
     }
   ];
 
@@ -203,7 +159,7 @@ export default function SolarPage({ onNavigate }) {
               { label: 'Industrial Solar', desc: 'Sustained thermal-electrical generation.' },
               { label: 'Commercial Rooftop', desc: 'Space-optimized panel alignment.' },
               { label: 'Ground Mounted Systems', desc: 'Utility-scale structural arrays.' },
-              { label: '24/7 Engineering Support', desc: 'SCADA integrations and yield tracking.' }
+              { label: '24/7 Engineering Support', desc: 'Comprehensive monitoring and maintenance.' }
             ].map((card, i) => (
               <div 
                 key={i}
@@ -286,7 +242,7 @@ export default function SolarPage({ onNavigate }) {
               Comprehensive Solar Energy Solutions
             </h2>
             <p style={{ fontSize: '18px', color: 'var(--text-muted)', maxWidth: '640px', margin: '0 auto' }}>
-              From initial structural assessment to SCADA-integrated microgrids.
+              From initial structural assessment to complete installation and commissioning.
             </p>
           </div>
 
@@ -476,15 +432,12 @@ export default function SolarPage({ onNavigate }) {
             }} />
 
             {[
-              { title: "Consultation", desc: "Understanding the unique energy, load, and tariff structure of your facility." },
-              { title: "Energy Assessment", desc: "Deep load profiling to optimize initial array sizes." },
+              { title: "Consultation", desc: "Expert advisory services to evaluate your energy needs and define the ideal solar infrastructure scope." },
+              { title: "Energy Assessment", desc: "Deep load profiling and consumption analysis to optimize initial array sizes." },
               { title: "Site Survey", desc: "Inspection of rooftop load limits, ground soil, and shade constraints." },
-              { title: "Engineering Design", desc: "Full simulation mapping of grid parameters and string layout designs." },
-              { title: "Financial Analysis", desc: "LCOE calculations, investment return, and regulatory solar tariff parameters." },
-              { title: "Installation", desc: "Rigorous construction led by certified structural and electrical engineers." },
-              { title: "Testing", desc: "String validation, insulation diagnostics, and voltage balancing." },
-              { title: "Commissioning", desc: "Local utility integration, final inspection approval, and microgrid turn-on." },
-              { title: "Monitoring & Maintenance", desc: "Active real-time SCADA telemetry monitoring and preventive diagnostics." }
+              { title: "Installation", desc: "End-to-end professional deployment by certified structural and electrical engineers." },
+              { title: "Testing & Commissioning", desc: "String validation, insulation diagnostics, and grid synchronization to guarantee performance." },
+              { title: "Annual Maintenance Contracts (AMCs)", desc: "Comprehensive preventative maintenance and AMC service agreements." }
             ].map((item, idx) => (
               <div key={idx} style={{ display: 'flex', gap: '24px', position: 'relative' }}>
                 <div style={{
@@ -541,8 +494,8 @@ export default function SolarPage({ onNavigate }) {
               { title: 'Engineering Excellence', desc: 'All designs are verified using CAD and electrical simulation packages before structural fabrication.' },
               { title: 'Customized Infrastructure', desc: 'We align solar tilt angle, string configurations, and structural heights to fit your exact terrain.' },
               { title: 'Experienced Team', desc: 'Delivered by structural and electrical power engineers with decades of combined execution experience.' },
-              { title: 'Quality Components', desc: 'We use Tier-1 solar modules and smart telemetry inverters with international certifications.' },
-              { title: 'Long-Term Support', desc: 'Dedicated field engineers available to resolve SCADA telemetry or system alerts within hours.' },
+              { title: 'Quality Components', desc: 'We use Tier-1 solar modules and premium inverters with international certifications.' },
+              { title: 'Long-Term Support', desc: 'Dedicated field engineers available to resolve any system alerts within hours.' },
               { title: 'Sustainable Innovation', desc: 'Continuous integration of cutting-edge technology like bifacial modules and smart BESS optimization.' }
             ].map((item, idx) => (
               <div 
@@ -572,54 +525,6 @@ export default function SolarPage({ onNavigate }) {
 
 
 
-      {/* SECTION 9 — PROJECT IMPACT */}
-      <section ref={statsSectionRef} className="section" style={{ borderBottom: '1px solid var(--border-color)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <span style={{ color: 'var(--primary)', fontSize: '14px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
-              PROJECT METRICS
-            </span>
-            <h2 style={{ fontSize: '36px', color: 'var(--text-dark)', marginTop: '12px' }}>
-              Corporate Solar Grid Impact
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '40px', textAlign: 'center' }}>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', fontFamily: 'var(--font-heading)' }}>
-                {stats.cleanEnergy}k+
-              </div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', marginTop: '8px' }}>
-                Clean Energy (MWh)
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', fontFamily: 'var(--font-heading)' }}>
-                {stats.costSaved}%
-              </div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', marginTop: '8px' }}>
-                Tariff Savings
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', fontFamily: 'var(--font-heading)' }}>
-                {stats.co2}+
-              </div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', marginTop: '8px' }}>
-                CO2 Tons Offset
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', fontFamily: 'var(--font-heading)' }}>
-                {stats.uptime}%
-              </div>
-              <div style={{ fontSize: '14px', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', marginTop: '8px' }}>
-                System Uptime SLA
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 10 — FAQ */}
       <section className="section section-secondary">
@@ -638,7 +543,7 @@ export default function SolarPage({ onNavigate }) {
               { q: "How does industrial solar integration work?", a: "Magi designs string configuration solar layouts connected to commercial inverters that synchronize with your local utility grid, automatically priority-routing clean power before drawing grid electricity." },
               { q: "What roof space is required to start?", a: "A basic commercial solar implementation generally requires a minimum of 2,000 sq ft of shade-free structural roof area or ground terrain space." },
               { q: "How long does engineering setup take?", a: "Typically, full structural survey, compliance approval, mechanical structural assembly, and grid hookup takes between 4 to 8 weeks depending on capacity scale." },
-              { q: "Do you provide grid telemetry options?", a: "Yes. All solar engineering commission includes full SCADA integration, providing live voltage output statistics and string level telemetry data." },
+              { q: "Do you offer Annual Maintenance Contracts (AMCs)?", a: "Yes. We offer comprehensive AMC packages to ensure your solar installation runs efficiently year-round." },
               { q: "Can institutional campus buildings install solar?", a: "Absolutely. We customize architectural frames for library roofs, solar carport panels, and sports arenas to optimize campus energy footprints." }
             ].map((faq, idx) => (
               <div 
@@ -689,6 +594,8 @@ export default function SolarPage({ onNavigate }) {
       </section>
 
       {/* SECTION 11 — CALL TO ACTION */}
+      <OtherServices currentService="solar" onNavigate={onNavigate} />
+
       <section id="cta" style={{
         position: 'relative',
         padding: '140px 0',
@@ -750,7 +657,6 @@ export default function SolarPage({ onNavigate }) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

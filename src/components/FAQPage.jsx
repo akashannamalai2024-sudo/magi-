@@ -29,7 +29,7 @@ export default function FAQPage({ onNavigate }) {
     { id: 'Solar', name: 'Solar & Battery Storage', icon: Sun },
     { id: 'Biogas', name: 'Biogas & Waste-to-Energy', icon: Flame },
     { id: 'EV', name: 'EV Charging & Mobility', icon: Truck },
-    { id: 'Water', name: 'Water & Eco Sanitation', icon: Droplet }
+    { id: 'Water', name: 'Bio Septic Tanks & Mobile Toilets', icon: Droplet }
   ];
 
   const faqsList = [
@@ -47,7 +47,7 @@ export default function FAQPage({ onNavigate }) {
     {
       category: 'General',
       q: "How does Magi monitor installed infrastructure?",
-      a: "Every system is integrated with Magi IoT Telemetry, providing real-time data on energy generation, storage health, waste processing rates, and wastewater quality 24/7."
+      a: "Every system is backed by our Annual Maintenance Contracts (AMCs), providing regular inspections, system optimization, and preventative service."
     },
     {
       category: 'General',
@@ -77,7 +77,7 @@ export default function FAQPage({ onNavigate }) {
     {
       category: 'General',
       q: "Does MAGI offer performance guarantees?",
-      a: "Yes, we offer guaranteed Generation Ratio (PR) for Solar plants and specific output purity metrics for wastewater and biogas systems."
+      a: "Yes, we offer guaranteed Generation Ratio (PR) for Solar plants and specific output metrics for biogas systems."
     },
     {
       category: 'General',
@@ -185,8 +185,8 @@ export default function FAQPage({ onNavigate }) {
     },
     {
       category: 'Biogas',
-      q: "What is the minimum waste input required for a commercial digester?",
-      a: "We customize plants starting from 500 kg per day for commercial buildings up to 100+ tons per day for municipalities."
+      q: "What is the processing capacity of your digesters?",
+      a: "We design and engineer custom biogas and waste-to-energy systems with capacities ranging precisely from 10 kg/day to 1000 kg/day."
     },
 
     // Category: EV Charging & Mobility
@@ -241,7 +241,7 @@ export default function FAQPage({ onNavigate }) {
       a: "Yes, the central dashboard allows operators to start/stop sessions, schedule charges, adjust power limits, and check active errors."
     },
 
-    // Category: Water & Eco Sanitation
+    // Category: Bio Septic Tanks & Mobile Toilets
     {
       category: 'Water',
       q: "What is a bio-septic tank and how is it different from a concrete septic tank?",
@@ -259,38 +259,13 @@ export default function FAQPage({ onNavigate }) {
     },
     {
       category: 'Water',
-      q: "What is Zero Liquid Discharge (ZLD)?",
-      a: "ZLD is a water treatment process where all industrial wastewater is recycled, leaving zero liquid discharge into municipal drains or natural water bodies."
-    },
-    {
-      category: 'Water',
-      q: "How is treated greywater sanitized for reuse?",
-      a: "Water passes through multi-grade sand filters, activated carbon beds, and UV disinfection, making it safe for flushing and cooling towers."
-    },
-    {
-      category: 'Water',
-      q: "What is the function of the MBBR (Moving Bed Biofilm Reactor)?",
-      a: "MBBR utilizes floating plastic carriers where biomass grows, digesting organic dissolved pollutants under continuous aeration."
-    },
-    {
-      category: 'Water',
-      q: "How does MAGI prevent odor in sewage treatment plants (STPs)?",
-      a: "We use closed tanks with air-scrubbers, activated carbon odor filters, and continuous dissolved oxygen (DO) monitoring to prevent anaerobic foul pockets."
-    },
-    {
-      category: 'Water',
-      q: "Are there underground wastewater systems available?",
-      a: "Yes, we specialize in fully underground STPs with surface landscaping, saving valuable commercial parking and lawn space."
-    },
-    {
-      category: 'Water',
       q: "What are the daily maintenance requirements for a bio-septic tank?",
-      a: "Bio-septic tanks require zero daily maintenance. STPs require minor periodic checks of aeration blower filters and chlorine levels."
+      a: "Bio-septic tanks require zero daily maintenance."
     },
     {
       category: 'Water',
-      q: "What parameters are measured to guarantee effluent compliance?",
-      a: "We install real-time inline analyzers measuring pH, BOD (Biochemical Oxygen Demand), COD (Chemical Oxygen Demand), and TSS (Total Suspended Solids)."
+      q: "What makes your FRP Toilets suitable for commercial use?",
+      a: "Our FRP (Fiber Reinforced Plastic) Toilets are built with highly durable, UV-resistant composites. They are lightweight, completely waterproof, and designed to withstand heavy public or commercial use with minimal maintenance."
     }
   ];
 

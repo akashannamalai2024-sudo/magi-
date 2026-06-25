@@ -142,7 +142,7 @@ export default function ContactPage({ onNavigate }) {
               {[
                 { title: 'Engineering Consultation', desc: 'Custom energy models and technical viability checks.' },
                 { title: 'Project Planning', desc: 'Grid integration audits and regulatory approvals.' },
-                { title: 'Technical Support', desc: '24/7 monitoring, telemetry and SLA-backed response.' },
+                { title: 'Technical Support', desc: 'Dedicated maintenance and SLA-backed response.' },
                 { title: 'Enterprise Solutions', desc: 'Large scale corporate ESG compliance models.' }
               ].map((item, idx) => (
                 <div 
@@ -364,7 +364,7 @@ export default function ContactPage({ onNavigate }) {
                         <option value="Solar Energy Solutions">Solar Energy Solutions</option>
                         <option value="Biogas & Waste-to-Energy">Biogas & Waste-to-Energy</option>
                         <option value="EV & Battery Mobility">EV & Battery Mobility</option>
-                        <option value="Bio Septic & Eco Sanitation">Bio Septic & Eco Sanitation</option>
+                        <option value="Bio Septic Tanks & Mobile Toilets">Bio Septic Tanks & Mobile Toilets</option>
                         <option value="Multiple Services">Multiple Services</option>
                       </select>
                     </div>
@@ -608,7 +608,7 @@ export default function ContactPage({ onNavigate }) {
               },
               {
                 q: "Can I request multiple services?",
-                a: "Absolutely. Most modern enterprise layouts use hybrid systems: combining industrial solar arrays with battery backup and biological wastewater recycling systems."
+                a: "Absolutely. Most modern enterprise layouts use hybrid systems: combining industrial solar arrays with battery backup and efficient organic waste management."
               },
               {
                 q: "How long does it take to receive a proposal?",
@@ -616,7 +616,7 @@ export default function ContactPage({ onNavigate }) {
               },
               {
                 q: "Do you provide after-sales support?",
-                a: "Yes. Magi provides comprehensive O&M (Operation & Maintenance) Service Level Agreements (SLAs) including active SCADA telemetry monitoring, routine panel washing, filter replacement, and rapid dispatch."
+                a: "Yes. Magi provides comprehensive O&M (Operation & Maintenance) Service Level Agreements (SLAs) including routine panel washing, component servicing, and rapid dispatch."
               }
             ].map((faq, idx) => (
               <div 

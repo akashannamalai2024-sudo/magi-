@@ -26,6 +26,7 @@ import {
   DollarSign,
   HeartHandshake
 } from 'lucide-react';
+import OtherServices from './OtherServices';
 
 export default function BiogasPage({ onNavigate }) {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -47,7 +48,7 @@ export default function BiogasPage({ onNavigate }) {
     {
       title: "Institutional Waste Infrastructure",
       image: "/biogas_institutional.png",
-      desc: "High-capacity decentralized waste treatment systems for colleges, hospitals, and corporate campuses."
+      desc: "High-capacity decentralized biogas systems for colleges, hospitals, and corporate campuses."
     },
     {
       title: "Community Biogas Plants",
@@ -57,7 +58,7 @@ export default function BiogasPage({ onNavigate }) {
     {
       title: "Organic Waste Processing Systems",
       image: "/biogas_processing.png",
-      desc: "Advanced pre-treatment equipment to optimize feedstock digestion rates and output yield."
+      desc: "Advanced feedstock processing equipment to optimize digestion rates and output yield."
     },
     {
       title: "Bio-CNG Concepts",
@@ -67,7 +68,7 @@ export default function BiogasPage({ onNavigate }) {
     {
       title: "Slurry Management Systems",
       image: "/biogas_slurry.png",
-      desc: "Engineered solid-liquid separator loops for biological resource recovery and wastewater recycling."
+      desc: "Engineered solid-liquid separator loops for biological resource recovery and sustainable management."
     },
     {
       title: "Organic Fertilizer & By-product",
@@ -136,7 +137,7 @@ export default function BiogasPage({ onNavigate }) {
                 maxWidth: '620px',
                 lineHeight: '1.7'
               }}>
-                Engineering intelligent biogas and waste-to-energy systems that convert organic waste into renewable energy, reduce environmental impact, and create long-term operational value.
+                Engineering intelligent biogas and waste-to-energy systems (10 to 1000 kg/day capacity) that convert organic waste into renewable energy, reduce environmental impact, and create long-term operational value.
               </p>
 
               <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
@@ -166,10 +167,10 @@ export default function BiogasPage({ onNavigate }) {
               position: 'relative'
             }}>
               {[
-                { title: 'Food Waste Processing', desc: 'Up to 98% efficiency yield loops.' },
+                { title: 'Plant Capacities', desc: 'Custom systems ranging from 10 kg/day to 1000 kg/day.' },
                 { title: 'Bio-CNG Infrastructure', desc: 'Upgraded clean energy output.' },
                 { title: 'Renewable Thermal Fuel', desc: 'Direct replacement for industrial LPG.' },
-                { title: 'Environmental Engineering', desc: 'ZLD zero liquid discharge compatible.' }
+                { title: 'Food Waste Processing', desc: 'Up to 98% efficiency yield loops.' }
               ].map((card, idx) => (
                 <div 
                   key={idx}
@@ -259,7 +260,7 @@ export default function BiogasPage({ onNavigate }) {
                 color: 'var(--text-muted)',
                 marginBottom: '36px'
               }}>
-                At Magi, we design and build complete, integrated waste-to-energy infrastructures. By turning municipal, commercial, and agricultural organic waste streams into clean methane and high-grade organic fertilizers, we help large institutions and industrial campuses eliminate disposal costs while locking in predictable energy resources.
+                At Magi, we design and build complete, integrated waste-to-energy infrastructures with processing capacities ranging from 10 to 1000 kg per day. By turning municipal, commercial, and agricultural organic waste streams into clean methane and high-grade organic fertilizers, we help large institutions and industrial campuses eliminate disposal costs while locking in predictable energy resources.
               </p>
 
               {/* Grid Features */}
@@ -806,6 +807,8 @@ export default function BiogasPage({ onNavigate }) {
       </section>
 
       {/* SECTION 12 — FINAL CTA */}
+      <OtherServices currentService="biogas" onNavigate={onNavigate} />
+
       <section style={{
         position: 'relative',
         padding: '140px 0',
@@ -864,7 +867,6 @@ export default function BiogasPage({ onNavigate }) {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

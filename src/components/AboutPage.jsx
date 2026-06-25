@@ -121,25 +121,16 @@ export default function AboutPage({ onNavigate }) {
               Magi Renewable Energy Solutions delivers integrated renewable energy, environmental engineering, waste-to-energy, EV mobility, and sustainable infrastructure solutions for industries, institutions, commercial facilities, and communities.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <button onClick={() => onNavigate('contact')} className="btn btn-primary" style={{ cursor: 'pointer', border: 'none' }}>Explore Our Solutions</button>
+
               <button 
                 onClick={() => onNavigate('contact')} 
-                className="btn" 
+                className="btn btn-primary" 
                 style={{
-                  backgroundColor: 'transparent',
-                  color: '#FFFFFF',
-                  border: '1px solid rgba(255,255,255,0.3)',
+                  border: 'none',
                   padding: '16px 28px',
                   borderRadius: 'var(--radius-button)',
                   fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'var(--transition-fast)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
+                  cursor: 'pointer'
                 }}
               >
                 Contact Our Team
@@ -152,7 +143,7 @@ export default function AboutPage({ onNavigate }) {
             {[
               { label: 'Renewable Infrastructure', desc: 'Custom integrated grid systems.' },
               { label: 'Sustainable Engineering', desc: 'ISO certified design precision.' },
-              { label: 'Future Ready Solutions', desc: 'SCADA-monitored automation.' },
+              { label: 'Future Ready Solutions', desc: 'Long-term reliability and support.' },
               { label: 'Long-Term Partnership', desc: 'Decade-long operations support.' }
             ].map((card, i) => (
               <div 
@@ -203,7 +194,7 @@ export default function AboutPage({ onNavigate }) {
               Magi Renewable Energy Solutions was founded on the belief that modern industries and institutions need robust, long-term engineering partners to transition toward carbon-neutral operations. We do not look at sustainability as an ad-hoc green checklist, but as a critical infrastructure requirement.
             </p>
             <p style={{ fontSize: '16px', color: 'var(--text-muted)', marginBottom: '20px', lineHeight: '1.7' }}>
-              Our design ethos focuses on system-level integration. We merge multi-source renewable microgrids with advanced environmental systems like circular anaerobic loops and Zero Liquid Discharge sanitation grids. This ensures complete reliability and commercial viability for our clients.
+              Our design ethos focuses on system-level integration. We merge multi-source renewable microgrids with advanced environmental systems like circular anaerobic loops and highly durable bio septic sanitation systems. This ensures complete reliability and commercial viability for our clients.
             </p>
             <p style={{ fontSize: '16px', color: 'var(--text-muted)', marginBottom: '40px', lineHeight: '1.7' }}>
               Today, Magi stands as a trusted contractor for Fortune 500 industrial lines, leading educational institutions, hospitality centers, and communities across Tamil Nadu. We design and deliver operational plants built to withstand the demands of the future.
@@ -213,7 +204,7 @@ export default function AboutPage({ onNavigate }) {
               {[
                 { title: 'Engineering Excellence', icon: <Sliders size={20} />, desc: 'Systemic design compliance.' },
                 { title: 'Sustainable Innovation', icon: <Sparkles size={20} />, desc: 'Continuous circular energy integration.' },
-                { title: 'Environmental Responsibility', icon: <Globe size={20} />, desc: 'ZLD and waste-to-energy loops.' },
+                { title: 'Environmental Responsibility', icon: <Globe size={20} />, desc: 'Bio septic and waste-to-energy loops.' },
                 { title: 'Long-Term Value', icon: <Award size={20} />, desc: '15+ year operational guarantee.' }
               ].map((card, idx) => (
                 <div 
@@ -264,9 +255,9 @@ export default function AboutPage({ onNavigate }) {
               { title: 'Renewable Energy Infrastructure', icon: <Zap size={24} />, desc: 'Custom commercial solar microgrids integrated with high-capacity Battery Energy Storage Systems (BESS) for grid independence.' },
               { title: 'Waste-to-Energy Systems', icon: <Sparkles size={24} />, desc: 'Industrial anaerobic digestion loops converting organic and agricultural waste streams into clean methane or electric power.' },
               { title: 'Sustainable Mobility', icon: <Activity size={24} />, desc: 'High-power commercial EV fleet charging depots powered by intelligent load-distribution algorithms and solar carports.' },
-              { title: 'Eco Sanitation & Treatment', icon: <Compass size={24} />, desc: 'Circular greywater recycling, bio-septic sanitation lines, and zero-liquid-discharge engineering to preserve water security.' },
+              { title: 'Bio Septic Tanks & Mobile Toilets', icon: <Compass size={24} />, desc: 'High-compliance portable sanitation, FRP cabins, and advanced bio septic tanks for reliable off-grid usage.' },
               { title: 'Environmental Engineering', icon: <Globe size={24} />, desc: 'Advanced air scrubbing, bio-filtration, and soil carbon capture systems designed to maintain strict environmental standards.' },
-              { title: 'Green Operational Systems', icon: <Settings size={24} />, desc: 'Cloud-based SCADA dashboards enabling real-time telemetry, automated diagnostic triggers, and system efficiency balancing.' }
+              { title: 'System Operations & Maintenance', icon: <Settings size={24} />, desc: 'Comprehensive preventative maintenance and service agreements to maximize long-term energy yields.' }
             ].map((item, idx) => (
               <div 
                 key={idx}
@@ -415,9 +406,9 @@ export default function AboutPage({ onNavigate }) {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '32px' }}>
             {[
               { title: 'Engineering Precision', desc: 'Every line we build is guided by high-spec thermodynamic, physical, and electrical system simulations.' },
-              { title: 'Customized Infrastructure', desc: 'No cookie-cutter kits. We tailor solar arrays, digestion chambers, and treatment nodes to local environments.' },
+              { title: 'Customized Infrastructure', desc: 'No cookie-cutter kits. We tailor solar arrays, digestion chambers, and bio septic systems to local environments.' },
               { title: 'Reliable Execution', desc: 'On-time delivery backed by modular fabrication processes and deep local utilities compliance.' },
-              { title: 'Future Ready Solutions', desc: 'Built-in SCADA connectivity enables your engineering team to monitor power grids, fleets, and water assets.' },
+              { title: 'Future Ready Solutions', desc: 'Robust engineering standards ensure your infrastructure is scalable and adaptable over decades of use.' },
               { title: 'Dedicated Support', desc: 'Decade-long Operation & Maintenance (O&M) SLA options ensure uptime remains close to 100%.' },
               { title: 'Sustainability First', desc: 'Every BTU of thermal output or kWh of solar power is designed to permanently replace fossil fuels.' }
             ].map((item, idx) => (
@@ -503,7 +494,7 @@ export default function AboutPage({ onNavigate }) {
               { step: "Step 4", title: "Project Planning", desc: "Procurement mapping, regulatory local approvals, and grid connection parameters." },
               { step: "Step 5", title: "Implementation", desc: "Civil excavation, mechanical structural assembly, and plant components installation." },
               { step: "Step 6", title: "Testing & Commissioning", desc: "Component diagnostics, fluid testing, voltage validation, and utility grid handoff." },
-              { step: "Step 7", title: "Long-Term Maintenance", desc: "Regular field inspections, sensor recalibrations, and real-time telemetry support." }
+              { step: "Step 7", title: "Long-Term Maintenance", desc: "Regular field inspections, preventative maintenance, and long-term support." }
             ].map((item, index) => (
               <div key={index} style={{ display: 'flex', gap: '24px', position: 'relative' }}>
                 <div style={{
@@ -536,6 +527,54 @@ export default function AboutPage({ onNavigate }) {
                   </div>
                   <p style={{ fontSize: '14px', color: 'var(--text-muted)', margin: 0, lineHeight: '1.6' }}>{item.desc}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 6.5 — CERTIFICATIONS */}
+      <section style={{ backgroundColor: 'var(--bg-secondary)', padding: '80px 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+        <div className="container" style={{ textAlign: 'center' }}>
+          <span style={{ color: 'var(--primary)', fontSize: '14px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>
+            ACCREDITATIONS & COMPLIANCE
+          </span>
+          <h2 style={{ fontSize: '36px', color: 'var(--text-dark)', marginBottom: '48px', fontWeight: '800' }}>
+            Internationally Certified Organization
+          </h2>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            {[
+              { text: 'ISO 9001:2015', desc: 'Quality Management System' },
+              { text: 'ISO 14001:2015', desc: 'Environmental Management' },
+              { text: 'ISO 45001:2018', desc: 'Occupational Health & Safety' }
+            ].map((cert) => (
+              <div key={cert.text} style={{ 
+                backgroundColor: '#FFFFFF', 
+                border: '1px solid var(--border-color)', 
+                borderRadius: '16px', 
+                padding: '32px', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                gap: '12px',
+                minWidth: '240px',
+                boxShadow: 'var(--shadow-soft)'
+              }}>
+                <div style={{ 
+                  backgroundColor: 'var(--primary)', 
+                  borderRadius: '50%', 
+                  width: '56px', 
+                  height: '56px', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  color: '#FFFFFF',
+                  marginBottom: '8px'
+                }}>
+                  <Award size={28} />
+                </div>
+                <div style={{ fontSize: '20px', fontWeight: '800', color: 'var(--text-dark)' }}>{cert.text}</div>
+                <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>{cert.desc}</div>
               </div>
             ))}
           </div>
@@ -801,7 +840,7 @@ export default function AboutPage({ onNavigate }) {
             Partner With an Engineering Team That Builds Sustainable Infrastructure
           </h2>
           <p style={{ fontSize: '18px', color: 'rgba(255,255,255,0.8)', marginBottom: '40px', lineHeight: '1.6' }}>
-            Whether you're planning a renewable energy project, waste-to-energy facility, EV charging station infrastructure, or eco-sanitation treatment system, our engineering team is ready to deliver.
+            Whether you're planning a renewable energy project, waste-to-energy facility, EV charging station infrastructure, or mobile toilet network, our engineering team is ready to deliver.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
             <button onClick={() => onNavigate('contact')} className="btn btn-primary">

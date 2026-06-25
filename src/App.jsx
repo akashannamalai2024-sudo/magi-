@@ -175,17 +175,17 @@ export default function App() {
     setAiTyping(true);
 
     setTimeout(() => {
-      let aiResponse = "I can assist you with Magi's integrated renewable grids. Feel free to ask about Solar, Biogas, EV Mobility, Water treatment, or submit a request in the Consultation form!";
+      let aiResponse = "I can assist you with Magi's integrated renewable grids. Feel free to ask about Solar, Biogas, EV Mobility, Bio Septic Tanks, or submit a request in the Consultation form!";
       const lower = userText.toLowerCase();
 
-      if (lower.includes('solar') || lower.includes('panel') || lower.includes('bess') || lower.includes('storage')) {
-        aiResponse = "Our customized commercial solar microgrids and battery storage systems (BESS) are engineered for 24/7 business continuity. We handle design, utility coordination, and SCADA monitoring.";
+      if (lower.includes('solar') || lower.includes('panel') || lower.includes('street light')) {
+        aiResponse = "We are a trusted vendor and service provider for solar panels and solar street lights, offering energy assessments, complete installation, and comprehensive AMCs.";
       } else if (lower.includes('biogas') || lower.includes('waste') || lower.includes('biodigester') || lower.includes('thermal')) {
-        aiResponse = "Magi engineers anaerobic bio-digester loops that convert organic and municipal solid waste into electrical power, heat, or clean bio-methane for industrial use.";
+        aiResponse = "Magi engineers anaerobic bio-digester loops (10 to 1000 kg/day) that convert organic and municipal solid waste into electrical power, heat, or clean bio-methane.";
       } else if (lower.includes('ev') || lower.includes('charge') || lower.includes('mobility') || lower.includes('fleet')) {
         aiResponse = "We scale high-power commercial EV charging depots, integrating dynamic load management and solar-powered carports to reduce peak demand charges.";
-      } else if (lower.includes('septic') || lower.includes('water') || lower.includes('sanitation') || lower.includes('greywater')) {
-        aiResponse = "Our eco-sanitation systems treat biological waste, greywater, and zero liquid discharge (ZLD) streams to help organizations recycle water safely.";
+      } else if (lower.includes('septic') || lower.includes('toilet') || lower.includes('sanitation') || lower.includes('portable')) {
+        aiResponse = "We specialize in Bio Septic Tanks, Portable Toilets, Mobile Toilets, and FRP Toilets designed for high-quality, durable sanitation.";
       } else if (lower.includes('cost') || lower.includes('pricing') || lower.includes('quote') || lower.includes('consult')) {
         aiResponse = "We deliver customized engineering quotes. You can submit your requirements in the 'Find the Right Renewable Solution' form just above the footer!";
       }
@@ -208,7 +208,7 @@ export default function App() {
       role: "Director of Infrastructure",
       company: "St. Jude Regional Hospital",
       rating: 5,
-      review: "Clean sanitation and continuous power are critical. Magi designed an eco-septic wastewater recycling system paired with solar back-ups. Their team remains our trusted maintenance partner."
+      review: "Clean sanitation and continuous power are critical. Magi designed an advanced bio septic tank network paired with solar back-ups. Their team remains our trusted maintenance partner."
     },
     {
       name: "Hassan Al-Jamil",
@@ -222,13 +222,13 @@ export default function App() {
   const services = [
     {
       title: "Solar Energy Solutions",
-      desc: "High-capacity commercial and industrial rooftop solar arrays, customized solar microgrids, and energy storage systems engineered for uninterrupted business continuity.",
+      desc: "Comprehensive vendor and service provider for high-quality solar panels and solar street lights, delivering complete end-to-end installation and maintenance.",
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80",
-      capabilities: ["Industrial Rooftop Systems", "Solar Microgrids", "Battery Energy Storage (BESS)"]
+      capabilities: ["Solar Panels & Street Lights", "Installation & Commissioning", "Annual Maintenance (AMC)"]
     },
     {
       title: "Biogas & Waste-to-Energy",
-      desc: "Turn organic waste and municipal refuse into reliable electricity, thermal heat, or bio-methane with state-of-the-art bio-digesters and heat reclamation equipment.",
+      desc: "Turn organic waste and municipal refuse into reliable electricity, thermal heat, or bio-methane with state-of-the-art bio-digesters featuring capacities from 10 kg/day to 1000 kg/day.",
       image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&q=80",
       capabilities: ["Organic Bio-digesters", "Heat Recovery Systems", "Cogeneration (CHP) Engineering"]
     },
@@ -239,10 +239,10 @@ export default function App() {
       capabilities: ["Fleet Charging Hubs", "Dynamic Load Management", "Solar-Powered Carports"]
     },
     {
-      title: "Bio Septic & Eco Sanitation",
-      desc: "Advanced biological treatment and wastewater recycling plants engineered to help heavy industries, commercial spaces, and municipalities reclaim water safely.",
+      title: "Bio Septic Tanks and Mobile Toilets",
+      desc: "High-quality, durable sanitation solutions including portable toilets, mobile toilets, FRP toilets, and advanced bio septic tanks engineered for reliable performance.",
       image: "https://images.unsplash.com/photo-1615100139684-2450b3f27edb?auto=format&fit=crop&w=600&q=80",
-      capabilities: ["Greywater Recycling", "Zero Liquid Discharge (ZLD)", "Biological Sewage Systems"]
+      capabilities: ["Portable Toilets", "Mobile Toilets", "FRP Toilets", "Bio Septic Tanks"]
     }
   ];
 
@@ -300,10 +300,10 @@ export default function App() {
     },
     {
       q: "What does the 24/7 engineering SLA support cover?",
-      a: "Magi's Operational Support Agreement ensures real-time remote telemetry tracking of your grids, predictive maintenance scheduling, and dedicated field engineers dispatched immediately if utility disruptions or mechanical alerts occur."
+      a: "Magi's Operational Support Agreement ensures scheduled maintenance, system inspections, and dedicated field engineers dispatched immediately if utility disruptions or mechanical alerts occur."
     },
     {
-      q: "Are your water treatment solutions compliant with government standards?",
+      q: "Are your bio septic tanks compliant with government standards?",
       a: "Absolutely. All bio-septic and eco-sanitation systems engineered by Magi meet or exceed local, national, and international standards, delivering certified non-potable water for manufacturing reuse, cooling towers, and irrigation."
     }
   ];
@@ -323,7 +323,7 @@ export default function App() {
     },
     {
       title: "Reclaiming Greywater: Circular Economy in Modern Healthcare Facilities",
-      cat: "Eco Sanitation",
+      cat: "Bio Septic Tanks & Mobile Toilets",
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80",
       date: "April 15, 2026"
     },
@@ -375,11 +375,12 @@ export default function App() {
               src="/logo.jpeg" 
               alt="Magi Logo" 
               style={{
-                height: scrolled ? '62px' : '76px',
+                height: scrolled ? '72px' : '92px',
                 width: 'auto',
-                borderRadius: '6px',
+                borderRadius: '8px',
                 objectFit: 'contain',
-                transition: 'height 0.4s cubic-bezier(0.16, 1, 0.3, 1)'
+                transition: 'var(--transition-fast)',
+                mixBlendMode: 'multiply'
               }}
             />
           </a>
@@ -393,7 +394,7 @@ export default function App() {
               style={{
                 fontSize: '15px',
                 fontWeight: '600',
-                color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
+                color: 'var(--text-muted)',
                 transition: 'var(--transition-fast)'
               }}
             >
@@ -406,7 +407,7 @@ export default function App() {
               style={{
                 fontSize: '15px',
                 fontWeight: '600',
-                color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
+                color: 'var(--text-muted)',
                 transition: 'var(--transition-fast)'
               }}
             >
@@ -425,7 +426,7 @@ export default function App() {
                 style={{
                   fontSize: '15px',
                   fontWeight: '600',
-                  color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
+                  color: 'var(--text-muted)',
                   transition: 'var(--transition-fast)',
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -463,7 +464,7 @@ export default function App() {
                   { label: 'Solar Energy Solutions', target: 'solar' },
                   { label: 'Biogas & Waste-to-Energy Solutions', target: 'biogas' },
                   { label: 'EV & Battery Mobility Solutions', target: 'ev' },
-                  { label: 'Bio Septic Tanks & Eco Sanitation', target: 'sanitation' }
+                  { label: 'Bio Septic Tanks and Mobile Toilets', target: 'sanitation' }
                 ].map((subItem, sIdx) => (
                   <a
                     key={sIdx}
@@ -506,7 +507,7 @@ export default function App() {
               style={{
                 fontSize: '15px',
                 fontWeight: '600',
-                color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
+                color: 'var(--text-muted)',
                 transition: 'var(--transition-fast)'
               }}
             >
@@ -519,7 +520,7 @@ export default function App() {
               style={{
                 fontSize: '15px',
                 fontWeight: '600',
-                color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
+                color: 'var(--text-muted)',
                 transition: 'var(--transition-fast)'
               }}
             >
@@ -532,7 +533,7 @@ export default function App() {
               style={{
                 fontSize: '15px',
                 fontWeight: '600',
-                color: scrolled ? 'var(--text-muted)' : 'rgba(255,255,255,0.85)',
+                color: 'var(--text-muted)',
                 transition: 'var(--transition-fast)'
               }}
             >
@@ -550,7 +551,7 @@ export default function App() {
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                color: scrolled ? 'var(--text-dark)' : '#FFFFFF',
+                color: 'var(--text-dark)',
                 padding: '8px'
               }}
             >
@@ -589,7 +590,7 @@ export default function App() {
                 <a href="#solar" onClick={(e) => { e.preventDefault(); handleNavigate('solar'); }} style={{ color: 'var(--text-muted)' }}>Solar Energy Solutions</a>
                 <a href="#biogas" onClick={(e) => { e.preventDefault(); handleNavigate('biogas'); }} style={{ color: 'var(--text-muted)' }}>Biogas & Waste-to-Energy Solutions</a>
                 <a href="#ev" onClick={(e) => { e.preventDefault(); handleNavigate('ev'); }} style={{ color: 'var(--text-muted)' }}>EV & Battery Mobility Solutions</a>
-                <a href="#sanitation" onClick={(e) => { e.preventDefault(); handleNavigate('sanitation'); }} style={{ color: 'var(--text-muted)' }}>Bio Septic Tanks & Eco Sanitation</a>
+                <a href="#sanitation" onClick={(e) => { e.preventDefault(); handleNavigate('sanitation'); }} style={{ color: 'var(--text-muted)' }}>Bio Septic Tanks and Mobile Toilets</a>
               </div>
             </div>
 
@@ -685,7 +686,7 @@ export default function App() {
               lineHeight: '1.6',
               maxWidth: '620px'
             }}>
-              Delivering customized, high-precision engineering solutions across Solar, Biogas, EV Mobility, and Eco Sanitation for industries, governments, and forward-thinking organizations.
+              Delivering customized, high-precision engineering solutions across Solar, Biogas, EV Mobility, and Bio Septic Tanks & Mobile Toilets for industries, governments, and forward-thinking organizations.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
               <button 
@@ -714,7 +715,7 @@ export default function App() {
             </div>
             <div className="glass-card animate-float-4" style={{ padding: '32px', textAlign: 'center', marginTop: '24px' }}>
               <div style={{ fontSize: '48px', fontWeight: '800', color: 'var(--secondary)', marginBottom: '8px' }}>24/7</div>
-              <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>Telemetry SLA</div>
+              <div style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-dark)' }}>Maintenance SLA</div>
             </div>
           </div>
 
@@ -826,8 +827,8 @@ export default function App() {
               {[
                 { title: 'Renewable Energy', desc: 'Solar microgrids & smart battery grids.' },
                 { title: 'Waste-to-Energy', desc: 'Smarter anaerobic digestion plants.' },
-                { title: 'Environmental Engineering', desc: 'Zero Liquid Discharge waste treatment.' },
-                { title: 'Green Operational Systems', desc: 'Integrated SCADA smart monitoring.' }
+                { title: 'Environmental Engineering', desc: 'High compliance public health audits.' },
+                { title: 'Green Operational Systems', desc: 'Comprehensive operation and maintenance.' }
               ].map((feature, i) => (
                 <div key={i} style={{ display: 'flex', gap: '12px' }}>
                   <div style={{ color: 'var(--primary)', marginTop: '4px' }}>
@@ -976,7 +977,7 @@ export default function App() {
               { icon: HardHat, title: 'Engineering Excellence', desc: 'Rigorous pre-feasibility, structural analysis, and bespoke mechanical design.' },
               { icon: Sliders, title: 'Customized Solutions', desc: 'Zero off-the-shelf templates; every grid or digestor fits your plant specifications.' },
               { icon: Zap, title: 'End-to-End Execution', desc: 'Full EPC services: site licensing, utility coordination, grid sync, and testing.' },
-              { icon: Settings, title: 'SLA Maintenance Agreements', desc: 'Continuous performance optimization, field visits, and proactive telemetry.' },
+              { icon: Settings, title: 'SLA Maintenance Agreements', desc: 'Continuous performance optimization, scheduled servicing, and field visits.' },
               { icon: Globe, title: 'ESG Compliance Target', desc: 'Documented offsets for scope-1, scope-2, and scope-3 corporate sustainability reporting.' },
               { icon: Users, title: 'Experienced Engineering Team', desc: 'A multidisciplinary roster of energy, waste management, and hydraulic specialists.' }
             ].map((item, idx) => (
@@ -1091,41 +1092,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* ENGINEERING IMPACT (COUNTERS) */}
-      <section ref={statsSectionRef} style={{ backgroundColor: 'var(--bg-secondary)', padding: '80px 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
-        <div className="container">
-          <div className="responsive-grid-4" style={{
-            gap: '32px',
-            textAlign: 'center'
-          }}>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
-                {Math.round(stats.projects)}+
-              </div>
-              <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Completed Engineering Designs</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
-                {stats.capacity.toFixed(0)} MW+
-              </div>
-              <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Installed Renewable Power</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
-                {Math.round(stats.partners)}+
-              </div>
-              <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Corporate & Municipal Partners</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '56px', fontWeight: '800', color: 'var(--primary)', marginBottom: '8px' }}>
-                {Math.round(stats.satisfaction)}%
-              </div>
-              <div style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-dark)' }}>Client Retainer Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* IMPLEMENTATION PROCESS */}
       <section id="process" className="section">
         <div className="container">
@@ -1167,7 +1133,7 @@ export default function App() {
               { num: '03', title: 'Engineering Design', desc: 'Full custom blueprints, simulation outputs, and regulatory approvals.' },
               { num: '04', title: 'Project Execution', desc: 'Procurement of premium grade steel, PV arrays, and digesters.' },
               { num: '05', title: 'Commissioning', desc: 'System synchronization tests, safety compliance, and power-up.' },
-              { num: '06', title: 'SLA Maintenance', desc: 'Real-time SCADA tracking, scheduled servicing, 24/7 SLA dispatch.' }
+              { num: '06', title: 'SLA Maintenance', desc: 'Routine preventative servicing and 24/7 SLA dispatch.' }
             ].map((step, idx) => (
               <div 
                 key={idx} 
@@ -1483,10 +1449,13 @@ export default function App() {
                   src="/logo.jpeg" 
                   alt="Magi Logo" 
                   style={{
-                    height: '60px',
+                    height: '84px',
                     width: 'auto',
-                    borderRadius: '6px',
-                    objectFit: 'contain'
+                    borderRadius: '12px',
+                    objectFit: 'contain',
+                    backgroundColor: '#FFFFFF',
+                    padding: '8px',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.2)'
                   }}
                 />
               </div>
@@ -1507,6 +1476,39 @@ export default function App() {
                   Tamil Nadu - 625007
                 </div>
               </div>
+              
+              <div style={{ marginTop: '28px', display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                {[
+                  { text: 'ISO 9001' },
+                  { text: 'ISO 14001' },
+                  { text: 'ISO 45001' }
+                ].map(cert => (
+                  <div key={cert.text} style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    gap: '8px',
+                    padding: '8px 14px', 
+                    backgroundColor: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.1)', 
+                    borderRadius: '8px',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
+                  }}>
+                    <div style={{ 
+                      backgroundColor: 'var(--secondary)', 
+                      borderRadius: '50%', 
+                      width: '20px', 
+                      height: '20px', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      color: 'var(--bg-dark)' 
+                    }}>
+                      <Award size={12} strokeWidth={3} />
+                    </div>
+                    <span style={{ fontSize: '13px', fontWeight: '700', color: '#FFFFFF', letterSpacing: '0.5px' }}>{cert.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Col 2 */}
@@ -1518,7 +1520,7 @@ export default function App() {
                 <li><a href="#solar" onClick={(e) => { e.preventDefault(); handleNavigate('solar'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Solar Solutions</a></li>
                 <li><a href="#biogas" onClick={(e) => { e.preventDefault(); handleNavigate('biogas'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Biogas & Waste</a></li>
                 <li><a href="#ev" onClick={(e) => { e.preventDefault(); handleNavigate('ev'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>EV & Battery Mobility</a></li>
-                <li><a href="#sanitation" onClick={(e) => { e.preventDefault(); handleNavigate('sanitation'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Bio Septic Treatment</a></li>
+                <li><a href="#sanitation" onClick={(e) => { e.preventDefault(); handleNavigate('sanitation'); }} style={{ color: 'rgba(255,255,255,0.6)' }}>Bio Septic Tanks</a></li>
               </ul>
             </div>
 

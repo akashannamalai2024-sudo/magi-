@@ -206,7 +206,7 @@ export default function InteractiveWizard() {
                 <option value="Solar">Solar Microgrid Installation</option>
                 <option value="Biogas">Biogas & Waste-to-Energy Digester</option>
                 <option value="EV Mobility">Commercial EV fleet charging infrastructure</option>
-                <option value="Wastewater">Bio Septic & Wastewater recycling</option>
+                <option value="Sanitation">Bio Septic Tanks and Mobile Toilets</option>
                 <option value="Hybrid">Hybrid integrated utility system</option>
               </select>
             </div>
