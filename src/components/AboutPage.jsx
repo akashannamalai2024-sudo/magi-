@@ -118,7 +118,7 @@ export default function AboutPage({ onNavigate }) {
               marginBottom: '40px',
               maxWidth: '640px'
             }}>
-              Magi Renewable Energy Solutions delivers integrated renewable energy, environmental engineering, waste-to-energy, EV mobility, and sustainable infrastructure solutions for industries, institutions, commercial facilities, and communities.
+              Magi Renewable Energy Solutions delivers integrated renewable energy, waste-to-energy, EV mobility, and sustainable infrastructure solutions for industries, institutions, commercial facilities, and communities.
             </p>
             <div style={{ display: 'flex', gap: '16px' }}>
 
@@ -252,11 +252,10 @@ export default function AboutPage({ onNavigate }) {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
             {[
-              { title: 'Renewable Energy Infrastructure', icon: <Zap size={24} />, desc: 'Custom commercial solar microgrids integrated with high-capacity Battery Energy Storage Systems (BESS) for grid independence.' },
+              { title: 'Renewable Energy Infrastructure', icon: <Zap size={24} />, desc: 'Custom commercial solar microgrids engineered for maximum energy independence and reliability.' },
               { title: 'Waste-to-Energy Systems', icon: <Sparkles size={24} />, desc: 'Industrial anaerobic digestion loops converting organic and agricultural waste streams into clean methane or electric power.' },
               { title: 'Sustainable Mobility', icon: <Activity size={24} />, desc: 'High-power commercial EV fleet charging depots powered by intelligent load-distribution algorithms and solar carports.' },
               { title: 'Bio Septic Tanks & Mobile Toilets', icon: <Compass size={24} />, desc: 'High-compliance portable sanitation, FRP cabins, and advanced bio septic tanks for reliable off-grid usage.' },
-              { title: 'Environmental Engineering', icon: <Globe size={24} />, desc: 'Advanced air scrubbing, bio-filtration, and soil carbon capture systems designed to maintain strict environmental standards.' },
               { title: 'System Operations & Maintenance', icon: <Settings size={24} />, desc: 'Comprehensive preventative maintenance and service agreements to maximize long-term energy yields.' }
             ].map((item, idx) => (
               <div 
@@ -699,59 +698,7 @@ export default function AboutPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* SECTION 9 — OUR CLIENTS */}
-      <section className="section section-secondary">
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '56px' }}>
-            <span style={{ color: 'var(--primary)', fontSize: '14px', fontWeight: '700', letterSpacing: '1.5px', textTransform: 'uppercase' }}>
-              OUR NETWORK
-            </span>
-            <h2 style={{ fontSize: '36px', color: 'var(--text-dark)', marginTop: '12px' }}>
-              Trusted by Leading Institutions
-            </h2>
-          </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '24px'
-          }}>
-            {[
-              "Schneider Electric", "Siemens Energy", "ABB Group", "GE Vernova", 
-              "Tesla Energy", "Hitachi Energy", "L&T Infrastructure", "TATA Power"
-            ].map((client, idx) => (
-              <div 
-                key={idx}
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '12px',
-                  padding: '32px 24px',
-                  border: '1px solid var(--border-color)',
-                  textAlign: 'center',
-                  fontWeight: '800',
-                  fontSize: '18px',
-                  color: '#9CA3AF',
-                  fontFamily: 'var(--font-heading)',
-                  cursor: 'pointer',
-                  transition: 'var(--transition-fast)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                  e.currentTarget.style.color = 'var(--primary)';
-                  e.currentTarget.style.boxShadow = 'var(--shadow-medium)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.color = '#9CA3AF';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                {client}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 10 — SUSTAINABILITY COMMITMENT */}
       <section className="section">

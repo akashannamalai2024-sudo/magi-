@@ -67,7 +67,7 @@ export default function FAQPage({ onNavigate }) {
     {
       category: 'General',
       q: "Where are MAGI's engineering teams located?",
-      a: "Our primary engineering offices are based in Tamil Nadu and LA, with active field deployment teams across major industrial corridors."
+      a: "Our primary engineering offices are based in Tamil Nadu, with active field deployment teams across major industrial corridors."
     },
     {
       category: 'General',
@@ -91,11 +91,7 @@ export default function FAQPage({ onNavigate }) {
       q: "What components are used in MAGI Solar installations?",
       a: "We use Tier-1 Monoperc/Bifacial panels, smart micro-inverters or string inverters from leading manufacturers, and customized aluminum/HDG mounting structures."
     },
-    {
-      category: 'Solar',
-      q: "What is BESS and do we need it?",
-      a: "Battery Energy Storage Systems (BESS) store excess solar energy for use during peak tariff hours or power outages, stabilizing the local microgrid."
-    },
+
     {
       category: 'Solar',
       q: "How long do solar panels and inverters last?",

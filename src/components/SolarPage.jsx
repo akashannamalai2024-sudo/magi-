@@ -496,7 +496,7 @@ export default function SolarPage({ onNavigate }) {
               { title: 'Experienced Team', desc: 'Delivered by structural and electrical power engineers with decades of combined execution experience.' },
               { title: 'Quality Components', desc: 'We use Tier-1 solar modules and premium inverters with international certifications.' },
               { title: 'Long-Term Support', desc: 'Dedicated field engineers available to resolve any system alerts within hours.' },
-              { title: 'Sustainable Innovation', desc: 'Continuous integration of cutting-edge technology like bifacial modules and smart BESS optimization.' }
+              { title: 'Sustainable Innovation', desc: 'Continuous integration of cutting-edge technology like bifacial modules and smart grid optimization.' }
             ].map((item, idx) => (
               <div 
                 key={idx}

@@ -71,7 +71,7 @@ export default function EVPage({ onNavigate }) {
     {
       title: "Energy Efficient Mobility Systems",
       image: "/ev_efficient_mobility.png",
-      desc: "Integrating solar carports and localized BESS storage to insulate charging loops from peak grid fees."
+      desc: "Integrating solar carports and intelligent load management to insulate charging loops from peak grid fees."
     },
     {
       title: "Engineering & Maintenance Support",

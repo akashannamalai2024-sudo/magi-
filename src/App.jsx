@@ -54,8 +54,10 @@ export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [chatbotOpen, setChatbotOpen] = useState(false);
+  const [chatStep, setChatStep] = useState('init');
+  const [leadData, setLeadData] = useState({ service: '', requirements: '', contact: '', action: '' });
   const [chatMessages, setChatMessages] = useState([
-    { sender: 'ai', text: "Hello! I am Magi's AI Infrastructure Specialist. How can I assist you with our Solar, Biogas, EV mobility, or Eco-Sanitation services today?" }
+    { sender: 'ai', text: "Welcome to Magi! What service are you interested in?" }
   ]);
   const [chatInput, setChatInput] = useState('');
   const [aiTyping, setAiTyping] = useState(false);
@@ -165,6 +167,25 @@ export default function App() {
     }
   };
 
+  const handleChatOptionClick = (option) => {
+    setChatMessages(prev => [...prev, { sender: 'user', text: option }]);
+    setAiTyping(true);
+
+    setTimeout(() => {
+      if (chatStep === 'init') {
+        setLeadData(prev => ({ ...prev, service: option }));
+        setChatStep('requirements');
+        setChatMessages(prev => [...prev, { sender: 'ai', text: `Great choice! Could you briefly describe your facility size or specific requirements for ${option}?` }]);
+      } else if (chatStep === 'call_to_action') {
+        setLeadData(prev => ({ ...prev, action: option }));
+        setChatStep('complete');
+        setChatMessages(prev => [...prev, { sender: 'ai', text: "Your request has been successfully logged! Our engineering team will review your details and reach out to you shortly." }]);
+        console.log("LEAD CAPTURED:", { ...leadData, action: option });
+      }
+      setAiTyping(false);
+    }, 1000);
+  };
+
   const handleSendChatMessage = (e) => {
     e.preventDefault();
     if (!chatInput.trim()) return;
@@ -175,22 +196,19 @@ export default function App() {
     setAiTyping(true);
 
     setTimeout(() => {
-      let aiResponse = "I can assist you with Magi's integrated renewable grids. Feel free to ask about Solar, Biogas, EV Mobility, Bio Septic Tanks, or submit a request in the Consultation form!";
-      const lower = userText.toLowerCase();
-
-      if (lower.includes('solar') || lower.includes('panel') || lower.includes('street light')) {
-        aiResponse = "We are a trusted vendor and service provider for solar panels and solar street lights, offering energy assessments, complete installation, and comprehensive AMCs.";
-      } else if (lower.includes('biogas') || lower.includes('waste') || lower.includes('biodigester') || lower.includes('thermal')) {
-        aiResponse = "Magi engineers anaerobic bio-digester loops (10 to 1000 kg/day) that convert organic and municipal solid waste into electrical power, heat, or clean bio-methane.";
-      } else if (lower.includes('ev') || lower.includes('charge') || lower.includes('mobility') || lower.includes('fleet')) {
-        aiResponse = "We scale high-power commercial EV charging depots, integrating dynamic load management and solar-powered carports to reduce peak demand charges.";
-      } else if (lower.includes('septic') || lower.includes('toilet') || lower.includes('sanitation') || lower.includes('portable')) {
-        aiResponse = "We specialize in Bio Septic Tanks, Portable Toilets, Mobile Toilets, and FRP Toilets designed for high-quality, durable sanitation.";
-      } else if (lower.includes('cost') || lower.includes('pricing') || lower.includes('quote') || lower.includes('consult')) {
-        aiResponse = "We deliver customized engineering quotes. You can submit your requirements in the 'Find the Right Renewable Solution' form just above the footer!";
+      if (chatStep === 'requirements') {
+        setLeadData(prev => ({ ...prev, requirements: userText }));
+        setChatStep('contact_capture');
+        setChatMessages(prev => [...prev, { sender: 'ai', text: "Thank you. Our engineers can certainly help with that. To connect you with the right expert, please provide your name and contact number (or email)." }]);
+      } else if (chatStep === 'contact_capture') {
+        setLeadData(prev => ({ ...prev, contact: userText }));
+        setChatStep('call_to_action');
+        setChatMessages(prev => [...prev, { sender: 'ai', text: "Got it! How would you like to proceed?" }]);
+      } else if (chatStep === 'complete') {
+        setChatMessages(prev => [...prev, { sender: 'ai', text: "We already have your details! Our team will contact you soon." }]);
+      } else {
+        setChatMessages(prev => [...prev, { sender: 'ai', text: "Please use the buttons provided." }]);
       }
-
-      setChatMessages(prev => [...prev, { sender: 'ai', text: aiResponse }]);
       setAiTyping(false);
     }, 1000);
   };
@@ -201,7 +219,7 @@ export default function App() {
       role: "VP of Operations",
       company: "Apex Industrial Corp",
       rating: 5,
-      review: "Magi transitioned our entire automotive assembly plant to a hybrid solar-biogas grid. Their engineering precision and end-to-end execution exceeded our expectations, delivering 30% operational cost savings within year one."
+      review: "Magi transitioned our entire automotive assembly plant to a hybrid solar-biogas grid. Their engineering precision and project execution exceeded our expectations, delivering 30% operational cost savings within year one."
     },
     {
       name: "Dr. Eleanor Vance",
@@ -222,7 +240,7 @@ export default function App() {
   const services = [
     {
       title: "Solar Energy Solutions",
-      desc: "Comprehensive vendor and service provider for high-quality solar panels and solar street lights, delivering complete end-to-end installation and maintenance.",
+      desc: "Comprehensive vendor and service provider for high-quality solar panels and solar street lights, delivering complete installation and maintenance.",
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=600&q=80",
       capabilities: ["Solar Panels & Street Lights", "Installation & Commissioning", "Annual Maintenance (AMC)"]
     },
@@ -269,7 +287,7 @@ export default function App() {
     },
     {
       title: "Commercial Real Estate",
-      desc: "Increasing asset valuation through ESG compliance and smart rooftop installations.",
+      desc: "Increasing asset valuation through smart rooftop installations and sustainable energy generation.",
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -369,21 +387,44 @@ export default function App() {
       <nav className={`sticky ${scrolled ? 'scrolled' : 'transparent'}`}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
           
-          {/* Logo */}
-          <a href="#home" onClick={(e) => { e.preventDefault(); handleNavigate('home'); }} style={{ display: 'flex', alignItems: 'center' }}>
-            <img 
-              src="/logo.jpeg" 
-              alt="Magi Logo" 
-              style={{
-                height: scrolled ? '72px' : '92px',
+          {/* Logo and Badges */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+            <a href="#home" onClick={(e) => { e.preventDefault(); handleNavigate('home'); }} style={{ display: 'flex', alignItems: 'center' }}>
+              <img 
+                src="/logo.jpeg" 
+                alt="Magi Logo" 
+                style={{
+                  height: scrolled ? '80px' : '110px',
                 width: 'auto',
-                borderRadius: '8px',
+                borderRadius: '12px',
                 objectFit: 'contain',
-                transition: 'var(--transition-fast)',
-                mixBlendMode: 'multiply'
+                backgroundColor: '#FFFFFF',
+                padding: '6px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                transition: 'all 0.3s ease'
               }}
             />
-          </a>
+            </a>
+
+            {/* ISO Badges in Header */}
+            <div className="nav-iso-badges" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+              {['ISO 9001', 'ISO 14001', 'ISO 45001'].map(iso => (
+                <div key={iso} style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  gap: '4px',
+                  backgroundColor: 'rgba(10, 161, 89, 0.08)', 
+                  border: '1px solid rgba(10, 161, 89, 0.2)', 
+                  borderRadius: '6px', 
+                  padding: '4px 8px',
+                }}>
+                  <Award size={12} color="var(--primary)" />
+                  <span style={{ fontSize: '11px', fontWeight: '700', color: 'var(--primary)' }}>{iso}</span>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Central links */}
           <div className="nav-links" style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
@@ -853,7 +894,7 @@ export default function App() {
           
           <div className="section-header">
             <h2>Integrated Engineering Solutions</h2>
-            <p>Providing end-to-end sustainable infrastructure across renewable energy, circular waste management, and eco-sanitation.</p>
+            <p>Providing sustainable infrastructure across renewable energy, circular waste management, and eco-sanitation.</p>
           </div>
 
           <div className="grid-4" style={{ gap: '24px' }}>
@@ -976,9 +1017,9 @@ export default function App() {
             {[
               { icon: HardHat, title: 'Engineering Excellence', desc: 'Rigorous pre-feasibility, structural analysis, and bespoke mechanical design.' },
               { icon: Sliders, title: 'Customized Solutions', desc: 'Zero off-the-shelf templates; every grid or digestor fits your plant specifications.' },
-              { icon: Zap, title: 'End-to-End Execution', desc: 'Full EPC services: site licensing, utility coordination, grid sync, and testing.' },
-              { icon: Settings, title: 'SLA Maintenance Agreements', desc: 'Continuous performance optimization, scheduled servicing, and field visits.' },
-              { icon: Globe, title: 'ESG Compliance Target', desc: 'Documented offsets for scope-1, scope-2, and scope-3 corporate sustainability reporting.' },
+              { icon: Zap, title: 'Comprehensive Execution', desc: 'Full project services: site licensing, utility coordination, grid sync, and testing.' },
+              { icon: Factory, title: 'Durable Infrastructure', desc: 'Engineered for resilience and long-term operational stability in harsh industrial conditions.' },
+              { icon: Globe, title: 'Sustainable Operations', desc: 'Reduce your carbon footprint and transition to clean, reliable energy sources.' },
               { icon: Users, title: 'Experienced Engineering Team', desc: 'A multidisciplinary roster of energy, waste management, and hydraulic specialists.' }
             ].map((item, idx) => (
               <div 
@@ -1449,7 +1490,7 @@ export default function App() {
                   src="/logo.jpeg" 
                   alt="Magi Logo" 
                   style={{
-                    height: '84px',
+                    height: '110px',
                     width: 'auto',
                     borderRadius: '12px',
                     objectFit: 'contain',
@@ -1551,8 +1592,9 @@ export default function App() {
             flexWrap: 'wrap',
             gap: '16px'
           }}>
-            <div>
-              &copy; {new Date().getFullYear()} Magi Renewable Energy Solutions. All rights reserved.
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span>&copy; {new Date().getFullYear()} Magi Renewable Energy Solutions. All rights reserved.</span>
+              <span style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px' }}>Powered by Tesco Digitals</span>
             </div>
             <div style={{ display: 'flex', gap: '24px' }}>
               <a href="#privacy" style={{ color: 'rgba(255,255,255,0.5)' }}>Privacy Policy</a>
@@ -1716,85 +1758,108 @@ export default function App() {
             <div ref={chatEndRef} />
           </div>
 
-          {/* Quick Suggestions */}
-          <div style={{
-            padding: '10px 16px',
-            backgroundColor: '#FFFFFF',
-            borderTop: '1px solid #EEEEEE',
-            display: 'flex',
-            gap: '8px',
-            overflowX: 'auto',
-            whiteSpace: 'nowrap'
-          }} className="hide-scrollbar">
-            {['Solar Grids', 'Biogas Loops', 'EV Fleets', 'Eco-Sanitation'].map((topic) => (
-              <button
-                key={topic}
-                onClick={() => {
-                  setChatInput(topic);
-                }}
-                style={{
-                  fontSize: '12px',
-                  padding: '6px 12px',
-                  borderRadius: '20px',
-                  border: '1px solid rgba(31, 93, 55, 0.2)',
-                  backgroundColor: 'rgba(31, 93, 55, 0.05)',
-                  color: 'var(--primary)',
-                  cursor: 'pointer',
-                  fontWeight: '600'
-                }}
-              >
-                {topic}
-              </button>
-            ))}
-          </div>
+          {/* Chatbot Actions UI */}
+          {chatStep === 'init' && (
+            <div style={{ padding: '16px', backgroundColor: '#FFFFFF', borderTop: '1px solid #EEEEEE', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {['Solar', 'Biogas', 'EV Mobility', 'Bio Septic Tanks'].map(service => (
+                <button
+                  key={service}
+                  onClick={() => handleChatOptionClick(service)}
+                  style={{
+                    flex: '1 1 calc(50% - 8px)',
+                    padding: '10px',
+                    borderRadius: '8px',
+                    border: '1px solid var(--primary)',
+                    backgroundColor: 'rgba(10, 161, 89, 0.05)',
+                    color: 'var(--primary)',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    fontSize: '13px'
+                  }}
+                >
+                  {service}
+                </button>
+              ))}
+            </div>
+          )}
 
-          {/* Input Form */}
-          <form 
-            onSubmit={handleSendChatMessage}
-            style={{
-              padding: '16px',
-              backgroundColor: '#FFFFFF',
-              borderTop: '1px solid #EEEEEE',
-              display: 'flex',
-              gap: '10px'
-            }}
-          >
-            <input 
-              type="text"
-              value={chatInput}
-              onChange={(e) => setChatInput(e.target.value)}
-              placeholder="Ask about our green energy systems..."
+          {chatStep === 'call_to_action' && (
+            <div style={{ padding: '16px', backgroundColor: '#FFFFFF', borderTop: '1px solid #EEEEEE', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {['Request a Quote', 'Book a Site Visit', 'Speak to an Expert'].map(action => (
+                <button
+                  key={action}
+                  onClick={() => handleChatOptionClick(action)}
+                  style={{
+                    padding: '12px',
+                    borderRadius: '8px',
+                    border: 'none',
+                    backgroundColor: 'var(--primary)',
+                    color: '#FFFFFF',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    fontSize: '14px'
+                  }}
+                >
+                  {action}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {(chatStep === 'requirements' || chatStep === 'contact_capture') && (
+            <form 
+              onSubmit={handleSendChatMessage}
               style={{
-                flex: 1,
-                border: '1px solid #E0E0E0',
-                borderRadius: '8px',
-                padding: '10px 14px',
-                fontSize: '14px',
-                outline: 'none',
-                transition: 'border-color 0.2s'
-              }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
-              onBlur={(e) => e.target.style.borderColor = '#E0E0E0'}
-            />
-            <button 
-              type="submit"
-              style={{
-                backgroundColor: 'var(--primary)',
-                color: '#FFFFFF',
-                border: 'none',
-                width: '40px',
-                height: '40px',
-                borderRadius: '8px',
+                padding: '16px',
+                backgroundColor: '#FFFFFF',
+                borderTop: '1px solid #EEEEEE',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                transition: 'background-color 0.2s'
+                gap: '10px'
               }}
             >
-              <ArrowRight size={18} />
-            </button>
-          </form>
+              <input 
+                type="text"
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                placeholder={chatStep === 'requirements' ? "Describe your requirements..." : "Name & Contact info..."}
+                style={{
+                  flex: 1,
+                  border: '1px solid #E0E0E0',
+                  borderRadius: '8px',
+                  padding: '10px 14px',
+                  fontSize: '14px',
+                  outline: 'none',
+                  transition: 'border-color 0.2s'
+                }}
+                onFocus={(e) => e.target.style.borderColor = 'var(--primary)'}
+                onBlur={(e) => e.target.style.borderColor = '#E0E0E0'}
+              />
+              <button 
+                type="submit"
+                style={{
+                  backgroundColor: 'var(--primary)',
+                  color: '#FFFFFF',
+                  border: 'none',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  transition: 'background-color 0.2s'
+                }}
+              >
+                <ArrowUp size={20} />
+              </button>
+            </form>
+          )}
+
+          {chatStep === 'complete' && (
+             <div style={{ padding: '16px', backgroundColor: '#FFFFFF', borderTop: '1px solid #EEEEEE', textAlign: 'center', color: 'var(--text-muted)', fontSize: '14px' }}>
+               Chat session completed.
+             </div>
+          )}
         </div>
       )}
 

@@ -40,7 +40,7 @@ export default function BlogPage({ onNavigate }) {
 
   const latestArticles = [
     {
-      title: "The Future of Industrial Solar Energy and BESS Storage",
+      title: "The Future of Industrial Solar Energy Generation",
       category: "Solar Energy",
       date: "June 15, 2026",
       readTime: "6 min read",
