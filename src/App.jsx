@@ -394,36 +394,14 @@ export default function App() {
                 src="/logo.jpeg" 
                 alt="Magi Logo" 
                 style={{
-                  height: scrolled ? '80px' : '110px',
-                width: 'auto',
-                borderRadius: '12px',
-                objectFit: 'contain',
-                backgroundColor: '#FFFFFF',
-                padding: '6px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-                transition: 'all 0.3s ease'
-              }}
-            />
+                  height: scrolled ? '64px' : '84px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  transition: 'all 0.3s ease'
+                }}
+              />
             </a>
 
-            {/* ISO Badges in Header */}
-            <div className="nav-iso-badges" style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-              {['ISO 9001', 'ISO 14001', 'ISO 45001'].map(iso => (
-                <div key={iso} style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  gap: '4px',
-                  backgroundColor: 'rgba(10, 161, 89, 0.08)', 
-                  border: '1px solid rgba(10, 161, 89, 0.2)', 
-                  borderRadius: '6px', 
-                  padding: '4px 8px',
-                }}>
-                  <Award size={12} color="var(--primary)" />
-                  <span style={{ fontSize: '11px', fontWeight: '700', color: 'var(--primary)' }}>{iso}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* Central links */}
@@ -729,7 +707,7 @@ export default function App() {
             }}>
               Delivering customized, high-precision engineering solutions across Solar, Biogas, EV Mobility, and Bio Septic Tanks & Mobile Toilets for industries, governments, and forward-thinking organizations.
             </p>
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
               <button 
                 onClick={() => handleNavigate('contact')} 
                 className="btn btn-accent" 
@@ -737,6 +715,25 @@ export default function App() {
               >
                 Contact Us <ArrowRight size={18} />
               </button>
+            </div>
+            
+            {/* ISO Badges in Hero */}
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
+              {['ISO 9001', 'ISO 14001', 'ISO 45001'].map(iso => (
+                <div key={iso} style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  gap: '6px',
+                  backgroundColor: 'rgba(242, 250, 246, 0.9)', 
+                  border: '1px solid rgba(10, 161, 89, 0.3)', 
+                  borderRadius: '8px', 
+                  padding: '6px 16px',
+                }}>
+                  <Award size={16} color="var(--primary)" />
+                  <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--primary)' }}>{iso}</span>
+                </div>
+              ))}
             </div>
           </div>
 
