@@ -562,7 +562,14 @@ export default function App() {
           </div>
 
           {/* Right Action buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+            {/* ISO Certification Logos in Nav Right */}
+            <div className="nav-iso-logos" style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+              <img src="/iso-9001.svg" alt="ISO 9001" style={{ height: scrolled ? '40px' : '52px', width: 'auto', objectFit: 'contain', transition: 'all 0.3s ease' }} />
+              <img src="/iso-14001.svg" alt="ISO 14001" style={{ height: scrolled ? '40px' : '52px', width: 'auto', objectFit: 'contain', transition: 'all 0.3s ease' }} />
+              <img src="/iso-45001.svg" alt="ISO 45001" style={{ height: scrolled ? '40px' : '52px', width: 'auto', objectFit: 'contain', transition: 'all 0.3s ease' }} />
+            </div>
+
             {/* Mobile menu trigger */}
             <button 
               onClick={() => setMobileMenuOpen(true)}
@@ -719,12 +726,7 @@ export default function App() {
               </button>
             </div>
             
-            {/* ISO Certification Logos in Hero */}
-            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center', marginTop: '16px' }}>
-              <img src="/iso-9001.svg" alt="ISO 9001" style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
-              <img src="/iso-14001.svg" alt="ISO 14001" style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
-              <img src="/iso-45001.svg" alt="ISO 45001" style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
-            </div>
+
           </div>
 
           {/* Right Content - Floating Glass Cards */}
