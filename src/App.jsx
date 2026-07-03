@@ -720,10 +720,10 @@ export default function App() {
             </div>
             
             {/* ISO Certification Logos in Hero */}
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center', marginTop: '16px' }}>
-              <img src="/iso-9001.svg" alt="ISO 9001" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-              <img src="/iso-14001.svg" alt="ISO 14001" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
-              <img src="/iso-45001.svg" alt="ISO 45001" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+            <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center', marginTop: '16px' }}>
+              <img src="/iso-9001.svg" alt="ISO 9001" style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/iso-14001.svg" alt="ISO 14001" style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/iso-45001.svg" alt="ISO 45001" style={{ height: '110px', width: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
 
