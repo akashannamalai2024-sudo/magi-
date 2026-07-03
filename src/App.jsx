@@ -402,6 +402,7 @@ export default function App() {
               />
             </a>
 
+
           </div>
 
           {/* Central links */}
@@ -627,8 +628,9 @@ export default function App() {
           {/* HERO SECTION */}
           <header id="home" style={{
         position: 'relative',
-        height: '100vh',
-        minHeight: '800px',
+        minHeight: '100vh',
+        paddingTop: '120px',
+        paddingBottom: '80px',
         display: 'flex',
         alignItems: 'center',
         color: '#FFFFFF',
@@ -717,23 +719,11 @@ export default function App() {
               </button>
             </div>
             
-            {/* ISO Badges in Hero */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center' }}>
-              {['ISO 9001', 'ISO 14001', 'ISO 45001'].map(iso => (
-                <div key={iso} style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  gap: '6px',
-                  backgroundColor: 'rgba(242, 250, 246, 0.9)', 
-                  border: '1px solid rgba(10, 161, 89, 0.3)', 
-                  borderRadius: '8px', 
-                  padding: '6px 16px',
-                }}>
-                  <Award size={16} color="var(--primary)" />
-                  <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--primary)' }}>{iso}</span>
-                </div>
-              ))}
+            {/* ISO Certification Logos in Hero */}
+            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center', marginTop: '16px' }}>
+              <img src="/iso-9001.svg" alt="ISO 9001" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/iso-14001.svg" alt="ISO 14001" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
+              <img src="/iso-45001.svg" alt="ISO 45001" style={{ height: '80px', width: 'auto', objectFit: 'contain' }} />
             </div>
           </div>
 
