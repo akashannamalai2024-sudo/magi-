@@ -685,14 +685,14 @@ export default function App() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '6px 16px',
-              backgroundColor: 'rgba(255, 255, 255, 0.1)',
-              borderRadius: '20px',
-              fontSize: '12px',
-              fontWeight: '700',
-              letterSpacing: '1px',
-              color: 'var(--secondary)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
+              padding: '8px 20px',
+              backgroundColor: 'rgba(255, 255, 255, 0.95)',
+              borderRadius: '24px',
+              fontSize: '13px',
+              fontWeight: '800',
+              letterSpacing: '1.5px',
+              color: 'var(--primary)',
+              boxShadow: '0 4px 15px rgba(0, 0, 0, 0.15)',
               marginBottom: '28px'
             }}>
               <Sparkles size={12} /> ENGINEERING SUSTAINABLE FUTURES
