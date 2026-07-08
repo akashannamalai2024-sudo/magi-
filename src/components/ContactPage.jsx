@@ -19,6 +19,8 @@ import {
 
 export default function ContactPage({ onNavigate }) {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [activeFAQ, setActiveFAQ] = useState(null);
   const [activeOffice, setActiveOffice] = useState(0);
   
@@ -44,9 +46,46 @@ export default function ContactPage({ onNavigate }) {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setSubmitError('');
+    setSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '1fd50703-d737-4a10-b8b1-5430fdb6ecf9',
+          subject: 'New Consultation Request — Magi Contact Page',
+          from_name: 'Magi Website',
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          email: formData.email,
+          phone: formData.phone,
+          organization: formData.organization,
+          city: formData.city,
+          industry_type: formData.industryType,
+          service_interested: formData.serviceInterested,
+          project_size: formData.projectSize,
+          message: formData.message
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormSubmitted(true);
+      } else {
+        setSubmitError(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setSubmitError('Network error. Please check your connection and try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const toggleFAQ = (index) => {
@@ -411,19 +450,35 @@ export default function ContactPage({ onNavigate }) {
                     </label>
                   </div>
 
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary" 
-                    style={{ 
-                      width: '100%', 
-                      padding: '16px', 
-                      borderRadius: '14px', 
-                      fontWeight: '600', 
+                  {submitError && (
+                    <div style={{
+                      color: '#B42318',
+                      backgroundColor: '#FEE4E2',
+                      padding: '12px 16px',
+                      borderRadius: '10px',
+                      fontSize: '14px',
+                      fontWeight: '500'
+                    }}>
+                      {submitError}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="btn btn-primary"
+                    style={{
+                      width: '100%',
+                      padding: '16px',
+                      borderRadius: '14px',
+                      fontWeight: '600',
                       fontSize: '16px',
-                      marginTop: '8px'
+                      marginTop: '8px',
+                      opacity: submitting ? 0.7 : 1,
+                      cursor: submitting ? 'not-allowed' : 'pointer'
                     }}
                   >
-                    Submit Enquiry
+                    {submitting ? 'Submitting…' : 'Submit Enquiry'}
                   </button>
 
                   <p style={{ margin: '8px 0 0 0', textAlign: 'center', fontSize: '12px', color: 'var(--text-muted)' }}>

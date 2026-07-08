@@ -1598,7 +1598,7 @@ export default function App() {
 
       {/* WhatsApp Floating CTA (Right Side, Stacked) */}
       <a 
-        href="https://wa.me/15550000000" 
+        href="https://wa.me/918778740104"
         target="_blank" 
         rel="noopener noreferrer"
         style={{

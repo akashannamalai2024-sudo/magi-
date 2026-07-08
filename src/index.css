@@ -695,3 +695,118 @@ nav.sticky.transparent .nav-item-link:hover {
   transform: translateX(-50%) translateY(0) !important;
 }
 
+/* ============================================================
+   GLOBAL MOBILE RESPONSIVENESS
+   Many layouts across the app set grid-template-columns, font-size
+   and padding via React INLINE styles. Inline styles beat class-based
+   media queries, so those layouts never collapsed on mobile.
+   The rules below use attribute selectors + !important to override
+   the inline values at mobile breakpoints — fixing every page at once
+   (Home, About, Solar, Biogas, EV, Sanitation, Blog, FAQ, Contact,
+   Wizard, Other Services) without touching component JSX.
+   ============================================================ */
+
+/* Safety: never allow horizontal overflow on small screens */
+html, body {
+  max-width: 100%;
+}
+
+/* --- Asymmetric 2-column splits (hero rows / feature rows) --- */
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+  [style*="grid-template-columns: 1.2fr 0.8fr"],
+  [style*="grid-template-columns: 0.8fr 1.2fr"],
+  [style*="grid-template-columns: 1fr 1.1fr"],
+  [style*="grid-template-columns: 1.1fr 1fr"],
+  [style*="grid-template-columns: 1fr 1.2fr"],
+  [style*="grid-template-columns: 1.2fr 1fr"],
+  [style*="grid-template-columns: 1.3fr 0.7fr"],
+  [style*="grid-template-columns: 0.7fr 1.3fr"],
+  [style*="grid-template-columns: 1.2fr 2fr"],
+  [style*="grid-template-columns: 2fr 1.2fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- Even 2-up grids & fixed multi-column rows collapse --- */
+@media (max-width: 768px) {
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns: repeat(2, 1fr)"],
+  [style*="grid-template-columns: repeat(3, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* 4-up stat / feature rows -> 2-up on tablets & large phones */
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* --- Narrow phones: 4-up rows go single column --- */
+@media (max-width: 480px) {
+  [style*="grid-template-columns: repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- Full-height heroes: allow content to grow instead of clipping --- */
+@media (max-width: 900px) {
+  section[style*="height: 100vh"] {
+    height: auto !important;
+    min-height: 100vh;
+    padding-top: 110px !important;
+    padding-bottom: 64px !important;
+  }
+}
+
+/* --- Shrink oversized inline headings on mobile --- */
+@media (max-width: 768px) {
+  [style*="font-size: 72px"] { font-size: 38px !important; }
+  [style*="font-size: 64px"] { font-size: 36px !important; }
+  [style*="font-size: 56px"] { font-size: 34px !important; }
+  [style*="font-size: 52px"] { font-size: 33px !important; }
+  [style*="font-size: 48px"] { font-size: 32px !important; }
+  [style*="font-size: 44px"] { font-size: 30px !important; }
+  [style*="font-size: 42px"] { font-size: 30px !important; }
+  [style*="font-size: 40px"] { font-size: 29px !important; }
+  [style*="font-size: 36px"] { font-size: 27px !important; }
+}
+
+@media (max-width: 480px) {
+  [style*="font-size: 72px"] { font-size: 32px !important; }
+  [style*="font-size: 64px"] { font-size: 30px !important; }
+  [style*="font-size: 56px"] { font-size: 28px !important; }
+  [style*="font-size: 52px"] { font-size: 27px !important; }
+  [style*="font-size: 48px"] { font-size: 26px !important; }
+  [style*="font-size: 44px"] { font-size: 25px !important; }
+  [style*="font-size: 42px"] { font-size: 25px !important; }
+  [style*="font-size: 40px"] { font-size: 24px !important; }
+  [style*="font-size: 36px"] { font-size: 24px !important; }
+}
+
+/* --- Trim very large vertical section padding on mobile --- */
+@media (max-width: 768px) {
+  [style*="padding: 160px 0"] { padding: 72px 0 !important; }
+  [style*="padding: 140px 0"] { padding: 64px 0 !important; }
+  [style*="padding: 120px 0"] { padding: 56px 0 !important; }
+  [style*="padding: 100px 0"] { padding: 52px 0 !important; }
+}
+
+/* --- Contact / form cards: tighten inner padding on small phones --- */
+@media (max-width: 480px) {
+  [style*="padding: 40px 32px"],
+  [style*="padding: 28px 36px"],
+  [style*="padding: 48px"] {
+    padding: 22px !important;
+  }
+}
+
+/* --- Reduce heavy container gaps that create dead space on mobile --- */
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 {
+    gap: 28px !important;
+  }
+}
+

@@ -15,10 +15,11 @@ export default function InteractiveWizard() {
   });
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate all fields
     if (!formData.industryType) {
       setError('Please select your Industry Type.');
@@ -40,9 +41,44 @@ export default function InteractiveWizard() {
       setError('All contact details are required.');
       return;
     }
-    
+
     setError('');
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: '1fd50703-d737-4a10-b8b1-5430fdb6ecf9',
+          subject: 'New Consultation Request — Magi Home Page',
+          from_name: 'Magi Website',
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          organization: formData.organization,
+          industry_sector: formData.industryType,
+          core_requirement: formData.requirement,
+          estimated_scale: formData.projectSize,
+          location: `${formData.city}, ${formData.state}`
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setError(data.message || 'Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Network error. Please check your connection and try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const updateField = (field, value) => {
@@ -366,6 +402,7 @@ export default function InteractiveWizard() {
 
             <button
               type="submit"
+              disabled={submitting}
               className="btn btn-accent"
               style={{
                 width: '100%',
@@ -376,10 +413,12 @@ export default function InteractiveWizard() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: '8px',
-                fontWeight: '700'
+                fontWeight: '700',
+                opacity: submitting ? 0.7 : 1,
+                cursor: submitting ? 'not-allowed' : 'pointer'
               }}
             >
-              Submit Consultation Request <ArrowRight size={18} />
+              {submitting ? 'Submitting…' : (<>Submit Consultation Request <ArrowRight size={18} /></>)}
             </button>
 
           </div>
